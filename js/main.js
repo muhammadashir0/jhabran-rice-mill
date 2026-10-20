@@ -28,15 +28,65 @@
     if (e.key === "Escape") setNav(false);
   });
 
+  const videos = () => Array.from(document.querySelectorAll("video"));
+  const armVideo = (v) => {
+    v.muted = true;
+    v.defaultMuted = true;
+    v.autoplay = true;
+    v.loop = true;
+    v.playsInline = true;
+    v.controls = false;
+    v.setAttribute("muted", "");
+    v.setAttribute("autoplay", "");
+    v.setAttribute("loop", "");
+    v.setAttribute("playsinline", "");
+    v.setAttribute("webkit-playsinline", "true");
+    v.removeAttribute("controls");
+    v.setAttribute("controlslist", "nodownload nofullscreen noremoteplayback");
+    try { v.disablePictureInPicture = true; } catch (_) {}
+  };
+  const tryPlay = (v) => {
+    if (v.dataset.off === "1") return;
+    v.muted = true;
+    const p = v.play();
+    if (p && typeof p.catch === "function") p.catch(() => {});
+  };
+  const playVisible = () => {
+    videos().forEach((v) => tryPlay(v));
+  };
+  videos().forEach(armVideo);
+
   window.addEventListener("load", () => {
     pre?.classList.add("hide");
-    document.querySelectorAll("video[autoplay]").forEach((v) => {
-      v.muted = true;
-      v.playsInline = true;
-      v.play().catch(() => {});
-    });
+    playVisible();
   });
-  setTimeout(() => pre?.classList.add("hide"), 1200);
+  setTimeout(() => {
+    pre?.classList.add("hide");
+    playVisible();
+  }, 800);
+
+  ["touchstart", "pointerdown", "click", "scroll"].forEach((ev) => {
+    window.addEventListener(ev, playVisible, { once: true, passive: true });
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") playVisible();
+  });
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = e.target;
+        if (e.isIntersecting) {
+          v.dataset.off = "0";
+          tryPlay(v);
+        } else {
+          v.dataset.off = "1";
+          v.pause();
+        }
+      });
+    }, { threshold: 0.2 });
+    videos().forEach((v) => io.observe(v));
+  }
 
   const form = document.querySelector("#enquire-form");
   form?.addEventListener("submit", (e) => {

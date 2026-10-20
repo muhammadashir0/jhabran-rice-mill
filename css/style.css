@@ -53,6 +53,23 @@ html, body {
 }
 
 img, video { max-width: 100%; display: block; }
+video {
+  object-fit: cover;
+  background: #06140e;
+  pointer-events: none;
+}
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-overlay-enclosure {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  -webkit-appearance: none;
+  width: 0 !important;
+  height: 0 !important;
+}
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font-family: inherit; }
 
