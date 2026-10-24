@@ -60,10 +60,7 @@
     pre?.classList.add("hide");
     playVisible();
   });
-  setTimeout(() => {
-    pre?.classList.add("hide");
-    playVisible();
-  }, 800);
+  pre?.classList.add("hide");
 
   ["touchstart", "pointerdown", "click", "scroll"].forEach((ev) => {
     window.addEventListener(ev, playVisible, { once: true, passive: true });
@@ -105,9 +102,9 @@
       `Message: ${data.message || ""}`,
     ];
     const text = encodeURIComponent(lines.join("\n"));
-    window.open(`https://wa.me/923457144455?text=${text}`, "_blank");
+    window.open(`https://wa.me/923133332101?text=${text}`, "_blank");
     const note = form.querySelector(".form-note");
-    if (note) note.textContent = "Opening WhatsApp with your enquiry. You may also email saithhanifsailaricemills@gmail.com.";
+    if (note) note.textContent = "Opening WhatsApp to +92 313 3332101. You may also email saithhanifsailaricemills@gmail.com.";
   });
 
   const filters = document.querySelectorAll(".filter-btn");
@@ -160,6 +157,7 @@
   });
 
   document.querySelectorAll(".pack-stage, .bag-stage, a.shot").forEach((stage) => {
+    if (stage.hasAttribute("data-pack3d") || stage.classList.contains("pack3d-stage") || stage.closest(".pack3d-stage")) return;
     const img = stage.querySelector("img");
     if (!img) return;
     const btn = document.createElement("button");

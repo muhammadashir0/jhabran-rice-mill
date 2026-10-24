@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
   <div class="preloader" aria-hidden="true"><img src="assets/icons/mark.svg" alt=""></div>
@@ -42,9 +42,30 @@
 
     <section class="pdp section">
       <div class="wrap pdp-grid">
-        <div class="pdp-gallery">
-          <div class="bag-stage gold-edge">
-            <img src="assets/products/studio-sella-1121.jpg" alt="Ziyarat Kainat Sella Rice 1121">
+                <div class="pdp-gallery">
+          <div class="pack3d-stage" data-pack3d="sella-1121" aria-label="360 view of Ziyarat Kainat Sella Rice 1121">
+            <div class="pack3d-fallback"><img src="assets/products/studio-sella-1121.jpg?v=5" alt="Ziyarat Kainat Sella Rice 1121"></div>
+          </div>
+          <div class="pack-config">
+            <p class="dir-label">Your mark on this sack</p>
+            <label>Name on pack
+              <input type="text" data-pack-name maxlength="28" placeholder="Leave blank for the mill brand" autocomplete="organization">
+            </label>
+            <p class="dir-label">Redesign colour</p>
+            <div class="swatches" data-pack-colors></div>
+            <label>Weight
+              <select data-pack-weight>
+                <option>5 kg</option>
+                <option>10 kg</option>
+                <option>25 kg</option>
+                <option>50 kg</option>
+              </select>
+            </label>
+            <div class="btn-row">
+              <button type="button" class="btn btn-gold" data-pack-wa>Send design on WhatsApp</button>
+              <button type="button" class="btn btn-dark" data-pack-reset>Reset</button>
+            </div>
+            <p class="form-note">Opens WhatsApp to +92 313 3332101. Type a name or pick a colour to preview.</p>
           </div>
         </div>
         <div>
@@ -66,7 +87,7 @@
           </table>
           <div class="btn-row">
             <a class="btn btn-gold" href="contact.html">Request this pack</a>
-            <a class="btn btn-dark" href="https://wa.me/923457144455?text=I%20want%20Ziyarat%20Kainat%20Sella%20Rice%201121%20from%20Saith%20Hanif%20Rice%20Mills" target="_blank" rel="noopener">WhatsApp the mill</a>
+            <a class="btn btn-dark" href="https://wa.me/923133332101?text=I%20want%20Ziyarat%20Kainat%20Sella%20Rice%201121%20from%20Saith%20Hanif%20Rice%20Mills" target="_blank" rel="noopener">WhatsApp the mill</a>
           </div>
         </div>
       </div>
@@ -106,7 +127,7 @@
       <div class="wrap">
         <p class="kicker">Also from the mill</p>
         <p class="also-line"><a href="product-steam.html">Steam 1121</a> · <span>Sella 1121</span> · <a href="product-classic.html">Classic Kainat Basmati Sella</a> · <a href="product-classic-steam.html">Classic Kainat Basmati Steam</a> · <a href="product-basmati.html">Basmati Rice</a> · <a href="product-short-grain.html">Short Grain</a> · <a href="product-b1.html">B-1 Broken</a> · <a href="product-awami.html">Basmati Awami Rice</a> · <a href="product-sultan-sella.html">Sultan Kainat Basmati Sella</a> · <a href="product-sultan-short.html">Sultan Short Grain</a></p>
-        <div class="grid-3"><a class="product-card" href="product-steam.html"><div class="shot pack-stage"><img src="assets/products/studio-steam-1121.jpg" alt="Kainat Steam Rice 1121"></div><div class="body"><h3>Kainat Steam Rice 1121</h3></div></a><a class="product-card" href="product-classic.html"><div class="shot pack-stage"><img src="assets/products/studio-basmati.jpg" alt="Classic Kainat Basmati Sella"></div><div class="body"><h3>Classic Kainat Basmati Sella</h3></div></a><a class="product-card" href="product-sultan-sella.html"><div class="shot pack-stage"><img src="assets/products/studio-sultan-sella.jpg" alt="Sultan Kainat Basmati Sella"></div><div class="body"><h3>Sultan Kainat Basmati Sella</h3></div></a></div>
+        <div class="grid-3"><a class="product-card" href="product-steam.html"><div class="shot pack-stage"><img src="assets/products/studio-steam-1121.jpg?v=5" alt="Kainat Steam Rice 1121"></div><div class="body"><h3>Kainat Steam Rice 1121</h3></div></a><a class="product-card" href="product-classic.html"><div class="shot pack-stage"><img src="assets/products/studio-basmati.jpg?v=5" alt="Classic Kainat Basmati Sella"></div><div class="body"><h3>Classic Kainat Basmati Sella</h3></div></a><a class="product-card" href="product-sultan-sella.html"><div class="shot pack-stage"><img src="assets/products/studio-sultan-sella.jpg?v=5" alt="Sultan Kainat Basmati Sella"></div><div class="body"><h3>Sultan Kainat Basmati Sella</h3></div></a></div>
       </div>
     </section>
 
@@ -129,6 +150,7 @@
       </div>
       <div>
         <h4>The mill</h4>
+        <a href="design.html">Design a pack</a>
         <a href="about.html">About Saith Hanif</a>
         <a href="process.html">From paddy to pack</a>
         <a href="quality.html">Grain quality</a>
@@ -154,6 +176,7 @@
       <div>
         <h4>Mill &amp; office</h4>
         <p>Jandiala Road, Jhabran<br>Punjab, Pakistan</p>
+        <a href="https://wa.me/923133332101">WhatsApp +92 313 3332101</a>
         <a href="tel:+923457144455">UAN +92 345 7144455</a>
         <a href="mailto:saithhanifsailaricemills@gmail.com">saithhanifsailaricemills@gmail.com</a>
       </div>
@@ -163,9 +186,11 @@
       <span>Jhabran · Punjab · Pakistan</span>
     </div>
   </footer>
-  <a class="wa" href="https://wa.me/923457144455" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a class="wa" href="https://wa.me/923133332101" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.8L1 23l6.4-1.1A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.8.7.7-3.7-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.4.2-.3a.5.5 0 0 0 0-.5c0-.1-.6-1.5-.8-2s-.4-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4 15 15 0 0 0 1.5.6 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
   </a>
+  <script src="js/vendor/three.min.js"></script>
+  <script src="js/pack3d.js?v=2"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
