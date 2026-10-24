@@ -586,9 +586,6 @@
     stage.addEventListener("pointerdown", onDown);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
-    stage.addEventListener("touchstart", onDown, { passive: true });
-    window.addEventListener("touchmove", onMove, { passive: true });
-    window.addEventListener("touchend", onUp);
     stage.addEventListener("wheel", (e) => {
       e.preventDefault();
       destDist = Math.max(2.2, Math.min(4.4, destDist + e.deltaY * 0.002));
@@ -609,7 +606,7 @@
     const tick = () => {
       raf = requestAnimationFrame(tick);
       idle += 1;
-      if (!reduce && auto && idle > 40) destY += 0.006;
+      if (!reduce && auto && idle > 40) destY += 0.0035;
       if (!reduce && idle > 240) auto = true;
       rotY += (destY - rotY) * 0.12;
       rotX += (destX - rotX) * 0.12;
