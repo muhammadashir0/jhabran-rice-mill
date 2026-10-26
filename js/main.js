@@ -41,7 +41,7 @@
     v.setAttribute("webkit-playsinline", "true");
     v.removeAttribute("controls");
     v.setAttribute("controlslist", "nodownload nofullscreen noremoteplayback");
-    if (!v.closest(".slide.is-on") && !v.hasAttribute("autoplay")) {
+    if (!v.closest("[data-slides]") && !v.closest(".slide.is-on") && !v.hasAttribute("autoplay")) {
       v.preload = "none";
     }
     try { v.disablePictureInPicture = true; } catch (_) {}
@@ -87,7 +87,10 @@
         }
       });
     }, { threshold: 0.2 });
-    videos().forEach((v) => io.observe(v));
+    videos().forEach((v) => {
+      if (v.closest("[data-slides]")) return;
+      io.observe(v);
+    });
   }
 
   const form = document.querySelector("#enquire-form");
@@ -171,58 +174,124 @@
 
   const slidesRoot = document.querySelector("[data-slides]");
   if (slidesRoot) {
+    const hero = slidesRoot.closest(".hero") || slidesRoot;
     const slides = Array.from(slidesRoot.querySelectorAll(".slide"));
     const dotsWrap = document.querySelector("[data-dots]");
+    const countEl = document.querySelector("[data-hero-count]");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const delay = reduce ? 9000 : (document.body.classList.contains("home") ? 5000 : 4500);
+    hero.style.setProperty("--hero-ms", delay + "ms");
     let i = 0;
-    let timer;
+    let timer = 0;
+    const pad = (n) => String(n).padStart(2, "0");
+
+    const runVideo = (v, on) => {
+      if (!v) return;
+      v.muted = true;
+      v.defaultMuted = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.controls = false;
+      if (on) {
+        v.preload = "auto";
+        const kick = () => {
+          const p = v.play();
+          if (p && p.catch) p.catch(() => {});
+        };
+        if (v.readyState >= 2) kick();
+        else {
+          v.addEventListener("canplay", kick, { once: true });
+          try { v.load(); } catch (_) {}
+        }
+      } else {
+        v.pause();
+      }
+    };
+
+    const preloadSlide = (idx) => {
+      const s = slides[idx];
+      if (!s) return;
+      const v = s.querySelector("video");
+      if (v) {
+        v.preload = "auto";
+        if (v.readyState < 1) {
+          try { v.load(); } catch (_) {}
+        }
+      }
+      const img = s.querySelector("img");
+      if (img && !img.complete) {
+        const warm = new Image();
+        warm.src = img.currentSrc || img.src;
+      }
+    };
+
     const dots = slides.map((_, idx) => {
       const b = document.createElement("button");
       b.type = "button";
       b.setAttribute("aria-label", "Slide " + (idx + 1));
-      b.addEventListener("click", () => { i = idx; show(i); arm(); });
+      b.addEventListener("click", () => go(idx));
       dotsWrap?.appendChild(b);
       return b;
     });
+
     const show = (n) => {
-      dots.forEach((d) => d.classList.remove("is-on"));
+      i = (n + slides.length) % slides.length;
       slides.forEach((s, idx) => {
-        const on = idx === n;
+        const on = idx === i;
         s.classList.toggle("is-on", on);
-        const v = s.querySelector("video");
-        if (!v) return;
-        if (on) {
-          v.muted = true;
-          const p = v.play();
-          if (p && p.catch) p.catch(() => {});
-        } else {
-          v.pause();
-        }
+        s.setAttribute("aria-hidden", on ? "false" : "true");
+        runVideo(s.querySelector("video"), on);
       });
-      const dot = dots[n];
+      dots.forEach((d) => d.classList.remove("is-on"));
+      const dot = dots[i];
       if (dot) {
         void dot.offsetWidth;
         dot.classList.add("is-on");
       }
+      if (countEl) countEl.textContent = pad(i + 1) + " / " + pad(slides.length);
+      preloadSlide((i + 1) % slides.length);
     };
+
     const arm = () => {
       clearInterval(timer);
-      const delay = document.body.classList.contains("home") ? 4000 : 4500;
-      timer = setInterval(() => {
-        i = (i + 1) % slides.length;
-        show(i);
-      }, delay);
+      timer = setInterval(() => show(i + 1), delay);
     };
+
+    const go = (n) => {
+      show(n);
+      arm();
+    };
+
     show(0);
     arm();
-    document.querySelector("[data-hero-prev]")?.addEventListener("click", () => {
-      i = (i - 1 + slides.length) % slides.length;
-      show(i);
-      arm();
+
+    document.querySelector("[data-hero-prev]")?.addEventListener("click", () => go(i - 1));
+    document.querySelector("[data-hero-next]")?.addEventListener("click", () => go(i + 1));
+
+    let touchX = 0;
+    hero.addEventListener("touchstart", (e) => {
+      touchX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    hero.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) < 48) return;
+      go(dx < 0 ? i + 1 : i - 1);
+    }, { passive: true });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+      if (e.key === "ArrowRight") go(i + 1);
+      if (e.key === "ArrowLeft") go(i - 1);
     });
-    document.querySelector("[data-hero-next]")?.addEventListener("click", () => {
-      i = (i + 1) % slides.length;
-      show(i);
-      arm();
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        clearInterval(timer);
+        slides[i]?.querySelector("video")?.pause();
+      } else {
+        runVideo(slides[i]?.querySelector("video"), true);
+        arm();
+      }
     });
   }
 

@@ -507,34 +507,63 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
 .hero-slides {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 .hero-slides .slide {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.1s ease;
+  visibility: hidden;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease, visibility 0.9s ease;
 }
-.hero-slides .slide.is-on { opacity: 1; }
-.hero-slides .slide.is-on video,
-.hero-slides .slide.is-on img {
-  animation: ken 8s var(--ease) forwards;
+.hero-slides .slide.is-on {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
-.hero-slides img {
+.hero-slides .slide img,
+.hero-slides .slide video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
+}
+.hero-slides .slide.is-on img {
+  animation: ken 9s var(--ease) forwards;
 }
 @keyframes ken {
   from { transform: scale(1.04); }
   to { transform: scale(1.12); }
 }
-.hero-dots {
+.hero-pager {
   position: absolute;
   left: 50%;
-  bottom: 28px;
-  z-index: 4;
+  bottom: 72px;
+  z-index: 5;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.hero-count {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  font-variant-numeric: tabular-nums;
+}
+.hero-dots {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  z-index: 5;
   display: flex;
   gap: 8px;
 }
@@ -555,7 +584,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   inset: 0 auto 0 0;
   width: 0;
   background: var(--gold);
-  animation: dotfill 4.5s linear forwards;
+  animation: dotfill var(--hero-ms, 5s) linear forwards;
 }
 @keyframes dotfill {
   to { width: 100%; }
@@ -686,6 +715,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   object-fit: cover;
   display: block;
 }
+.hero-slides video::-webkit-media-controls { display: none !important; }
 .lineup-band {
   background: #123226;
   line-height: 0;
