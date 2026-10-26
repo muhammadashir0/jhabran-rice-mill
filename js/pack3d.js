@@ -9,7 +9,7 @@
     },
     "sella-1121": {
       brand: "Ziyarat", name: "Kainat Sella Rice 1121", urdu: "عمدہ پکائی کے لیے بہترین خوشبودار چاول",
-      variety: "1121 Kainat extra-long", process: "Sella", weight: "50 kg",
+      variety: "1121 Kainat extra-long", process: "Sella", weight: "25 kg",
       color: "#6b1d68", accent: "#e8d5a3", cut: "assets/products/cut/studio-sella-1121.png",
       waName: "Ziyarat Kainat Sella Rice 1121"
     },
@@ -60,6 +60,18 @@
       variety: "Short grain", process: "Steam", weight: "25 kg",
       color: "#12243a", accent: "#c6a15b", cut: "assets/products/cut/studio-sultan-short.png",
       waName: "Sultan Short Grain"
+    }    ,
+    "wazir-sella": {
+      brand: "Wazir", name: "Wazir Kainat Basmati Sella", urdu: "وزیر کائینات باسمتی سیلہ",
+      variety: "Kainat basmati", process: "Sella", weight: "25 kg",
+      color: "#6b1d3a", accent: "#e8d5a3", cut: "assets/products/cut/studio-wazir-sella.png",
+      waName: "Wazir Kainat Basmati Sella"
+    },
+    "wazir-steam": {
+      brand: "Wazir", name: "Wazir Kainat Steam 1121", urdu: "وزیر کائینات سٹیم 1121",
+      variety: "1121 Kainat extra-long", process: "Steam", weight: "25 kg",
+      color: "#0e4d4d", accent: "#e8d5a3", cut: "assets/products/cut/studio-wazir-steam.png",
+      waName: "Wazir Kainat Steam 1121"
     }
   };
 

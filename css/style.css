@@ -487,6 +487,11 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   color: rgba(246,240,228,0.86);
   margin-top: 16px;
 }
+.pdp .intro {
+  margin: 0 0 18px;
+  color: #3d4d44;
+  max-width: 48ch;
+}
 .hero .urdu {
   display: block;
   width: max-content;
