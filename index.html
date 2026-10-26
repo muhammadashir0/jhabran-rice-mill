@@ -9,11 +9,11 @@
   <link rel="icon" href="assets/icons/mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=22">
+  <link rel="stylesheet" href="css/home.css?v=22">
 </head>
-<body>
+<body class="home">
   <div class="preloader" aria-hidden="true"><img src="assets/icons/mark.svg" alt=""></div>
   <a class="skip" href="#content">Skip to content</a>
   <header class="site-header">
@@ -21,160 +21,201 @@
       <a class="brand" href="index.html">
         <img src="assets/icons/mark.svg" alt="Saith Hanif Rice Mills">
         <span class="brand-lockup">
-          <span class="brand-org">Saith Hanif</span>
-          <span class="brand-org-sub">Rice Mills</span>
-          <span class="brand-product">Ziyarat · Sultan</span>
+          <span class="brand-org">Ziyarat</span>
+          <span class="brand-org-sub">Sultan · Wazir</span>
+          <span class="brand-product">Ziyarat · Sultan · Wazir</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
           <a class="active" href="index.html">Home</a>
-          <a class="" href="about.html">The Mill</a>
-          <a class="" href="products.html">Products</a>
-          <a class="" href="process.html">Process</a>
-          <a class="" href="quality.html">Quality</a>
-          <a class="" href="export.html">Export</a>
-          <a class="" href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="leadership.html">Leadership</a>
+          <a href="products.html">Products</a>
+          <a href="process.html">Process</a>
+          <a href="quality.html">Quality</a>
+          <a href="export.html">Export</a>
+          <a href="contact.html">Contact</a>
       </nav>
-      <a class="header-cta" href="contact.html">Contact the mill</a>
+      <a class="header-cta" href="contact.html">Enquire</a>
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <main id="content">
 
-    <section class="hero">
-      <div class="hero-media">
-        <video class="bg-video" autoplay muted loop playsinline poster="assets/images/real-paddy.jpg" webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
-          <source src="assets/videos/hero-paddy.mp4" type="video/mp4">
-        </video>
+    <section class="hero hero-film homepage-banner">
+      <div class="hero-slides banner" data-slides>
+        <div class="slide is-on">
+          <img src="assets/images/hero-table.jpg" alt="">
+        </div>
+        <div class="slide">
+          <video class="bg-video" autoplay muted loop playsinline poster="assets/images/real-paddy.jpg" webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+            <source src="assets/videos/hero-paddy.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide">
+          <video class="bg-video" muted loop playsinline poster="assets/images/real-harvest.jpg" webkit-playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+            <source src="assets/videos/farmer.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide">
+          <video class="bg-video" muted loop playsinline poster="assets/images/real-field.jpg" webkit-playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+            <source src="assets/videos/fields-wide.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide">
+          <video class="bg-video" muted loop playsinline poster="assets/images/punjab-fields.jpg" webkit-playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+            <source src="assets/videos/golden-field.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide">
+          <video class="bg-video" muted loop playsinline poster="assets/images/hero-table.jpg" webkit-playsinline preload="metadata" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+            <source src="assets/videos/cooking.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
       <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="kicker reveal">Saith Hanif Rice Mills · Jhabran</p>
-        <h1 class="reveal reveal-d1">From our mill.<br><em>To the world’s table.</em></h1>
-        <p class="urdu reveal reveal-d2" style="font-size:1.4rem;color:#e8d5a3;margin:14px 0 0">ایک لذیذ تجربہ ہر دسترخوان پر</p>
-        <p class="lede reveal reveal-d2" style="margin-top:18px">
-          Saith Hanif Rice Mills, Jhabran. Extra-long 1121, milled and packed here —
-          Ziyarat and Sultan.
-        </p>
-        <div class="btn-row reveal reveal-d3" style="margin-top:32px">
+      <div class="hero-content hero-center">
+        <p class="kicker" data-aos="fade-up">Ziyarat · Sultan · Wazir</p>
+        <h1 data-aos="fade-up">From our mill.<br><em>To the world’s table.</em></h1>
+        <p class="urdu" data-aos="fade-up">ایک لذیذ تجربہ ہر دسترخوان پر</p>
+        <p class="lede" data-aos="fade-up">Extra-long 1121, packed in Jhabran, Sheikhupura.</p>
+        <div class="btn-row hero-actions" data-aos="fade-up">
           <a class="btn btn-gold" href="products.html">See products</a>
-          <a class="btn btn-ghost" href="process.html">Mill process</a>
-        </div>
-        <div class="hero-meta reveal reveal-d3">
-          <span>Ziyarat · Sultan</span>
-          <span>Steam · Sella · Classic · Basmati</span>
-          <span>Short grain · B-1 · Awami</span>
-          <span>25 kg · 50 kg</span>
+          <a class="btn-arrow" href="products.html" aria-label="See products"><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M1.5 8.5H15.5"/><path d="M8.5 1.5L15.5 8.5L8.5 15.5"/></svg></a>
         </div>
       </div>
-      <div class="scroll-cue">Scroll</div>
+      <button class="hero-arrow prev" type="button" data-hero-prev aria-label="Previous slide"></button>
+      <button class="hero-arrow next" type="button" data-hero-next aria-label="Next slide"></button>
+      <div class="hero-dots" data-dots></div>
+      <a class="scroll-discover" href="#about">Scroll To Discover</a>
     </section>
 
-    <section class="section" style="padding-top:56px">
-      <div class="wrap">
-        <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px">
-          <div>
-            <p class="kicker">The mill’s packs</p>
-            <h2>Ten packs. Two brands.</h2>
-            <p class="lede" style="margin:8px 0 0">Open a pack. Turn it 360°. Put your mark on it.</p>
-          </div>
-          <a class="btn btn-dark" href="products.html">All packs</a>
+    <section class="kr-about" id="about">
+      <div class="wrap kr-about-grid">
+        <div class="kr-about-title" data-aos="fade-right">
+          <p class="title-small">Since 1975</p>
+          <h2>From Jhabran to the table.</h2>
         </div>
-        <div class="catalog">
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-steam.html"><img src="assets/products/studio-steam-1121.jpg?v=5" alt="Ziyarat Kainat Steam 1121"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Steam 1121</div><h3>Kainat Steam 1121</h3><a class="meta" href="product-steam.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-sella.html"><img src="assets/products/studio-sella-1121.jpg?v=5" alt="Ziyarat Kainat Sella 1121"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Sella 1121</div><h3>Kainat Sella 1121</h3><a class="meta" href="product-sella.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-classic.html"><img src="assets/products/studio-basmati.jpg?v=5" alt="Ziyarat Classic Sella"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Classic sella</div><h3>Classic Basmati Sella</h3><a class="meta" href="product-classic.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-classic-steam.html"><img src="assets/products/studio-classic-steam.jpg?v=5" alt="Ziyarat Classic Steam"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Classic steam</div><h3>Classic Basmati Steam</h3><a class="meta" href="product-classic-steam.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-basmati.html"><img src="assets/products/studio-short.jpg?v=5" alt="Ziyarat Basmati"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Basmati</div><h3>Basmati Rice</h3><a class="meta" href="product-basmati.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-short-grain.html"><img src="assets/products/studio-classic-sella.jpg?v=5" alt="Ziyarat Short Grain"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Short grain</div><h3>Short Grain</h3><a class="meta" href="product-short-grain.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-b1.html"><img src="assets/products/studio-b1.jpg?v=5" alt="Ziyarat B-1"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · B-1</div><h3>B-1 Broken</h3><a class="meta" href="product-b1.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-awami.html"><img src="assets/products/studio-awami.jpg?v=5" alt="Ziyarat Awami"></a>
-            <div class="body"><div class="tag"><span class="chip chip-z">Ziyarat</span> · Awami</div><h3>Basmati Awami</h3><a class="meta" href="product-awami.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-sultan-sella.html"><img src="assets/products/studio-sultan-sella.jpg?v=5" alt="Sultan Kainat Sella"></a>
-            <div class="body"><div class="tag"><span class="chip chip-s">Sultan</span> · Sella</div><h3>Kainat Basmati Sella</h3><a class="meta" href="product-sultan-sella.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-          <article class="product-card">
-            <a class="shot pack-stage" href="product-sultan-short.html"><img src="assets/products/studio-sultan-short.jpg?v=5" alt="Sultan Short Grain"></a>
-            <div class="body"><div class="tag"><span class="chip chip-s">Sultan</span> · Short grain</div><h3>Short Grain</h3><a class="meta" href="product-sultan-short.html"><span>View pack</span><span>→</span></a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap grid-2">
-        <div>
-          <p class="kicker">The mill</p>
-          <h2>Saith Hanif Rice Mills, Jhabran.</h2>
-          <div class="rule"></div>
-          <p class="lede">
-            The mill stands on Jandiala Road, Jhabran — in Punjab’s rice belt.
-            That is the pin on Google Maps, and that is where the bags leave the gate.
-          </p>
-          <p>
-            Ziyarat and Sultan are the mill’s two product brands. The mill stands behind every sack.
-          </p>
-          <div class="btn-row" style="margin-top:28px">
-            <a class="btn btn-dark" href="about.html">About the mill</a>
-          </div>
-        </div>
-        <div class="media-frame gold-edge">
+        <div class="kr-about-media" data-aos="fade-up">
           <video class="bg-video" autoplay muted loop playsinline poster="assets/images/real-paddy.jpg" webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
             <source src="assets/videos/paddy-sway.mp4" type="video/mp4">
           </video>
-          <span class="caption">Paddy in the breeze · Punjab belt</span>
+        </div>
+        <div class="kr-about-copy" data-aos="fade-left">
+          <h3>Saith Hanif founded the mill in 1975.</h3>
+          <p>Jandiala Road, Jhabran, Sheikhupura. Ziyarat, Sultan and Wazir leave this gate. Extra-long 1121 where the pack says so.</p>
+          <div class="btn-row" style="margin-top:18px">
+            <a class="btn btn-dark" href="about.html">The mill’s story</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap kr-timeline" data-aos="fade-up" data-timeline>
+        <button class="tl-nav prev" type="button" data-tl-prev aria-label="Previous figures"></button>
+        <div class="tl-track" data-tl-track>
+          <article class="tl-item-h"><b>12</b><span>Packs from this mill</span></article>
+          <article class="tl-item-h"><b>3</b><span>Ziyarat · Sultan · Wazir</span></article>
+          <article class="tl-item-h"><b>5–25</b><span>Kilogram sacks</span></article>
+          <article class="tl-item-h"><b>100%</b><span>Sortex-cleaned</span></article>
+          <article class="tl-item-h"><b>3</b><span>Export regions · Asia · Middle East · Europe</span></article>
+          <article class="tl-item-h"><b>1121</b><span>Extra-long where the pack says so</span></article>
+          <article class="tl-item-h"><b>6</b><span>Steps on the mill line</span></article>
+          <article class="tl-item-h"><b>1</b><span>Gate · Jandiala Road, Jhabran</span></article>
+        </div>
+        <button class="tl-nav next" type="button" data-tl-next aria-label="Next figures"></button>
+      </div>
+      <div class="wrap kr-about-cta">
+        <a class="btn btn-dark" href="about.html">About the mill</a>
+      </div>
+    </section>
+
+    <section class="kr-pillars">
+      <div class="wrap kr-pillars-grid">
+        <div data-aos="fade-right">
+          <p class="title-small">The mill</p>
+          <h2>Three marks. One gate.</h2>
+        </div>
+        <div class="kr-pillar" data-aos="fade-up">
+          <h3>Ziyarat</h3>
+          <p>Eight packs: steam, sella, Classic, basmati, short grain, Awami, B-1. Printed as Ziyarat.</p>
+        </div>
+        <div class="kr-pillar" data-aos="fade-up">
+          <h3>Sultan</h3>
+          <p>Two packs: Kainat Basmati Sella and Short Grain.</p>
         </div>
       </div>
     </section>
 
-    <section class="section band-dark">
+    <section class="kr-portfolio">
+      <div class="wrap kr-port-head">
+        <div data-aos="fade-right">
+          <p class="title-small">Our portfolio</p>
+          <h2>Ziyarat, Sultan, Wazir — or your print.</h2>
+        </div>
+        <a class="btn-arrow dark" href="products.html" aria-label="All packs"><svg viewBox="0 0 17 17" aria-hidden="true"><path d="M1.5 8.5H15.5"/><path d="M8.5 1.5L15.5 8.5L8.5 15.5"/></svg></a>
+      </div>
+      <div class="wrap kr-fields">
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="products.html"><img src="assets/products/studio-sella-1121.jpg?v=13" alt="Ziyarat"></a>
+          <h3>Ziyarat</h3>
+          <p>Eight packs milled on Jandiala Road.</p>
+          <a class="field-more" href="products.html">See Ziyarat <span></span></a>
+        </article>
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="product-sultan-sella.html"><img src="assets/products/studio-sultan-sella.jpg?v=13" alt="Sultan"></a>
+          <h3>Sultan</h3>
+          <p>Kainat Basmati Sella and Short Grain.</p>
+          <a class="field-more" href="product-sultan-sella.html">See Sultan <span></span></a>
+        </article>
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="design.html"><img src="assets/products/studio-classic-sella.jpg?v=13" alt="Private label"></a>
+          <h3>Your mark</h3>
+          <p>Private label if artwork and weight are agreed in writing first.</p>
+          <a class="field-more" href="design.html">Design a pack <span></span></a>
+        </article>
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="product-wazir-sella.html"><img src="assets/products/studio-wazir-sella.jpg" alt="Wazir"></a>
+          <h3>Wazir</h3>
+          <p>Kainat Basmati Sella and Steam 1121.</p>
+          <a class="field-more" href="product-wazir-sella.html">See Wazir <span></span></a>
+        </article>
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="process.html"><img src="assets/images/process-hands.jpg" alt="Mill process"></a>
+          <h3>The mill line</h3>
+          <p>Paddy in. Bags out. Intake, steam or sella, mill, sort, pack, load.</p>
+          <a class="field-more" href="process.html">Mill process <span></span></a>
+        </article>
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="quality.html"><img src="assets/images/process-hands.jpg" alt="Grain quality"></a>
+          <h3>Quality</h3>
+          <p>Length, Sortex, moisture, then a cook. No borrowed seals.</p>
+          <a class="field-more" href="quality.html">Quality checks <span></span></a>
+        </article>
+        <article class="field-box" data-aos="fade-up">
+          <a class="field-img" href="export.html#routes"><img src="assets/images/real-port.jpg" alt="Export"></a>
+          <h3>Export</h3>
+          <p>Asia, the Middle East, and Europe. Write the port with the pack.</p>
+          <a class="field-more" href="export.html">Export routes <span></span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="lineup-band">
+      <img src="assets/bg/pack-lineup.jpg?v=13" alt="Ziyarat and Sultan packs from Saith Hanif Rice Mills">
+    </section>
+
+    <section class="section band-dark kr-process">
       <div class="band-pattern"></div>
       <div class="wrap">
         <p class="kicker">The mill line</p>
-        <h2 style="max-width:18ch;margin-bottom:40px">Paddy in. Bags out.</h2>
+        <h2 class="process-title">Paddy in. Bags out.</h2>
         <div class="process-rail">
-          <article class="step" style="background:rgba(255,253,248,.04);border-color:rgba(198,161,91,.25);color:#f6f0e4">
-            <div class="num">01</div><h3>Paddy</h3><p style="color:#c5d0c8">Weighed at the gate. Moisture written down.</p>
-          </article>
-          <article class="step" style="background:rgba(255,253,248,.04);border-color:rgba(198,161,91,.25);color:#f6f0e4">
-            <div class="num">02</div><h3>Steam / Sella</h3><p style="color:#c5d0c8">Steam or parboil — as the buyer asked.</p>
-          </article>
-          <article class="step" style="background:rgba(255,253,248,.04);border-color:rgba(198,161,91,.25);color:#f6f0e4">
-            <div class="num">03</div><h3>Mill</h3><p style="color:#c5d0c8">Husk and bran off. Whole grain kept.</p>
-          </article>
-          <article class="step" style="background:rgba(255,253,248,.04);border-color:rgba(198,161,91,.25);color:#f6f0e4">
-            <div class="num">04</div><h3>Sort</h3><p style="color:#c5d0c8">Sortex. Stones and sooty grain out.</p>
-          </article>
-          <article class="step" style="background:rgba(255,253,248,.04);border-color:rgba(198,161,91,.25);color:#f6f0e4">
-            <div class="num">05</div><h3>Pack</h3><p style="color:#c5d0c8">Mill name and phones on the sack.</p>
-          </article>
-          <article class="step" style="background:rgba(255,253,248,.04);border-color:rgba(198,161,91,.25);color:#f6f0e4">
-            <div class="num">06</div><h3>Load</h3><p style="color:#c5d0c8">Truck or container from Jhabran.</p>
-          </article>
+          <article class="step"><div class="num">01</div><h3>Paddy</h3><p>Weighed at the gate. Moisture written down.</p></article>
+          <article class="step"><div class="num">02</div><h3>Steam / Sella</h3><p>Steam or parboil — as the buyer asked.</p></article>
+          <article class="step"><div class="num">03</div><h3>Mill</h3><p>Husk and bran off. Whole grain kept.</p></article>
+          <article class="step"><div class="num">04</div><h3>Sort</h3><p>Sortex. Stones and sooty grain out.</p></article>
+          <article class="step"><div class="num">05</div><h3>Pack</h3><p>Mill name and phones on the sack.</p></article>
+          <article class="step"><div class="num">06</div><h3>Load</h3><p>Truck or container from Jhabran.</p></article>
         </div>
         <div class="btn-row" style="margin-top:40px">
           <a class="btn btn-gold" href="process.html">Mill process</a>
@@ -182,69 +223,22 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap grid-2">
-        <div class="media-frame wide gold-edge">
-          <video class="bg-video" autoplay muted loop playsinline poster="assets/images/real-length.jpg" webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
-            <source src="assets/videos/grains.mp4" type="video/mp4">
-          </video>
-          <span class="caption">1121 extra-long grain</span>
-        </div>
-        <div>
-          <p class="kicker">On the bag</p>
-          <h2>What the sack says.</h2>
-          <div class="rule"></div>
-          <p class="lede">Sortex-clean. Extra-long where the pack says so. Steam or sella. Mill phone on the sack.</p>
-          <div class="diamonds" style="margin-top:28px">
-            <div class="diamond" style="border-color:#1b4a34"><span style="color:#1b4a34">100%<br>Sortex<br>clean</span></div>
-            <div class="diamond"><span style="color:#8a6a2a">Extra<br>long<br>grain</span></div>
-            <div class="diamond" style="border-color:#6d2748"><span style="color:#6d2748">Steam<br>and<br>sella</span></div>
-            <div class="diamond" style="border-color:#2d6a4f"><span style="color:#2d6a4f">Naturally<br>aromatic</span></div>
-          </div>
-          <div class="btn-row" style="margin-top:32px">
-            <a class="btn btn-dark" href="quality.html">Quality checks</a>
-          </div>
+    <section class="kr-join">
+      <div class="wrap kr-join-inner" data-aos="fade-up">
+        <p class="title-small">Trade</p>
+        <h2>Pack, volume, destination.</h2>
+        <p>WhatsApp the mill: which pack (Ziyarat or Sultan), how many bags or containers, and the port.</p>
+        <div class="btn-row">
+          <a class="btn btn-gold" href="contact.html">Enquire</a>
+          <a class="btn btn-dark" href="https://wa.me/923133332101" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <section class="section-tight">
-      <div class="wrap">
-        <div class="stats">
-          <div class="stat"><b>10</b><span>Packs from this mill</span></div>
-          <div class="stat"><b>2</b><span>Brands · Ziyarat · Sultan</span></div>
-          <div class="stat"><b>25 / 50</b><span>Kilogram sacks</span></div>
-          <div class="stat"><b>100%</b><span>Sortex-cleaned</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:40px">
-      <div class="wrap grid-2">
-        <div>
-          <p class="kicker">Trade</p>
-          <h2>Pack, volume, destination.</h2>
-          <div class="rule"></div>
-          <p class="lede">
-            WhatsApp or email the mill: which pack (Ziyarat or Sultan), how many bags or containers, and the port.
-            Private label if you already have a mark.
-          </p>
-          <div class="btn-row" style="margin-top:28px">
-            <a class="btn btn-gold" href="contact.html">Enquire</a>
-            <a class="btn btn-dark" href="export.html">Export</a>
-          </div>
-        </div>
-        <div class="media-frame wide gold-edge">
-          <video class="bg-video" autoplay muted loop playsinline poster="assets/images/real-port.jpg" webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
-            <source src="assets/videos/cargo.mp4" type="video/mp4">
-          </video>
-          <span class="caption">Ready for the quay</span>
-        </div>
-      </div>
-    </section>
-    
   </main>
-  <footer class="site-footer">
+  <footer class="site-footer foot-art">
+    <img class="foot-bg" src="assets/images/footer-world.jpg" alt="">
+    <div class="foot-shade"></div>
     <div class="wrap footer-grid">
       <div>
         <a class="brand" href="index.html">
@@ -252,7 +246,7 @@
           <span class="brand-lockup">
             <span class="brand-org">Saith Hanif</span>
             <span class="brand-org-sub">Rice Mills</span>
-            <span class="brand-product">Ziyarat · Sultan</span>
+            <span class="brand-product">Ziyarat · Sultan · Wazir</span>
           </span>
         </a>
         <p style="max-width:38ch;margin:18px 0 0;color:rgba(246,240,228,.7)">
@@ -264,6 +258,7 @@
         <h4>The mill</h4>
         <a href="design.html">Design a pack</a>
         <a href="about.html">About Saith Hanif</a>
+          <a href="leadership.html">Leadership</a>
         <a href="process.html">From paddy to pack</a>
         <a href="quality.html">Grain quality</a>
         <a href="export.html">Private label &amp; export</a>
@@ -283,11 +278,16 @@
         <h4>Sultan</h4>
         <a href="product-sultan-sella.html">Kainat Basmati Sella</a>
         <a href="product-sultan-short.html">Short Grain</a>
-        <a href="products.html">All 10 packs</a>
+        <a href="products.html">All packs</a>
+      </div>
+      <div>
+        <h4>Wazir</h4>
+        <a href="product-wazir-sella.html">Kainat Basmati Sella</a>
+        <a href="product-wazir-steam.html">Steam 1121</a>
       </div>
       <div>
         <h4>Mill &amp; office</h4>
-        <p>Jandiala Road, Jhabran<br>Punjab, Pakistan</p>
+        <p>Jandiala Road, Jhabran<br>Sheikhupura, Punjab, Pakistan</p>
         <a href="https://wa.me/923133332101">WhatsApp +92 313 3332101</a>
         <a href="tel:+923457144455">UAN +92 345 7144455</a>
         <a href="tel:+923216225499">+92 321 6225499</a>
