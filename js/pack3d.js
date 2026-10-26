@@ -16,7 +16,7 @@
     "classic-sella": {
       brand: "Ziyarat", name: "Classic Kainat Basmati Sella", urdu: "کائینات باسمتی سیلہ رائس",
       variety: "Kainat basmati", process: "Sella", weight: "25 kg",
-      color: "#b8942a", accent: "#1a1408", cut: "assets/products/cut/studio-basmati.png",
+      color: "#b8942a", accent: "#1a1408", cut: "assets/products/cut/studio-classic-sella.png",
       waName: "Ziyarat Classic Kainat Basmati Sella"
     },
     "classic-steam": {
@@ -28,13 +28,13 @@
     "basmati": {
       brand: "Ziyarat", name: "Ziyarat Basmati Rice", urdu: "باسمتی رائس",
       variety: "Basmati", process: "Steam", weight: "25 kg",
-      color: "#c45c1a", accent: "#e8d5a3", cut: "assets/products/cut/studio-short.png",
+      color: "#c45c1a", accent: "#e8d5a3", cut: "assets/products/cut/studio-basmati.png",
       waName: "Ziyarat Basmati Rice"
     },
     "short-grain": {
       brand: "Ziyarat", name: "Ziyarat Short Grain", urdu: "شارٹ گرین",
       variety: "Short grain", process: "Steam", weight: "25 kg",
-      color: "#c9a227", accent: "#1a1408", cut: "assets/products/cut/studio-classic-sella.png",
+      color: "#c9a227", accent: "#1a1408", cut: "assets/products/cut/studio-short.png",
       waName: "Ziyarat Short Grain"
     },
     "b1": {
@@ -135,120 +135,127 @@
     c.width = W; c.height = H;
     const ctx = c.getContext("2d");
     const col = state.color || pack.color;
-    const col2 = darken(col, 0.55);
-    const g = ctx.createLinearGradient(0, 0, W, 0);
-    g.addColorStop(0, col2);
-    g.addColorStop(0.5, col);
-    g.addColorStop(1, col2);
-    ctx.fillStyle = g;
+    const col2 = darken(col, 0.62);
+    const col3 = darken(col, 0.42);
+    const sultan = (pack.brand || "").toLowerCase() === "sultan" && !(state.name || "").trim();
+
+    const body = ctx.createLinearGradient(0, 0, W, 0);
+    body.addColorStop(0, col3);
+    body.addColorStop(0.18, col);
+    body.addColorStop(0.5, col2);
+    body.addColorStop(0.82, col);
+    body.addColorStop(1, col3);
+    ctx.fillStyle = body;
     ctx.fillRect(0, 0, W, H);
 
     ctx.save();
-    ctx.globalAlpha = 0.12;
-    ctx.strokeStyle = "#fff";
-    ctx.lineWidth = 1;
-    for (let y = -H; y < H * 2; y += 14) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y + W); ctx.stroke();
+    ctx.globalAlpha = 0.09;
+    ctx.strokeStyle = "#e8d5a3";
+    ctx.lineWidth = 1.2;
+    for (let y = -40; y < H + 40; y += 28) {
+      for (let x = -40; x < W + 40; x += 28) {
+        ctx.strokeRect(x, y, 14, 14);
+      }
     }
     ctx.restore();
 
-    ctx.fillStyle = "#c6a15b";
-    ctx.fillRect(0, 118, W, 8);
-    ctx.fillRect(0, H - 150, W, 8);
-
-    const foil = ctx.createLinearGradient(0, 150, W, 290);
+    const foil = ctx.createLinearGradient(0, 0, W, 0);
     foil.addColorStop(0, "#8a6a2a");
-    foil.addColorStop(0.5, "#e8d5a3");
+    foil.addColorStop(0.5, "#f0e0b0");
     foil.addColorStop(1, "#8a6a2a");
-    ctx.fillStyle = foil;
-    ctx.fillRect(0, 150, W, 148);
 
-    const mark = (state.name || pack.brand || "YOUR MARK").trim() || pack.brand;
-    ctx.fillStyle = "#1a1408";
+    ctx.fillStyle = foil;
+    ctx.fillRect(0, 0, W, 210);
+    ctx.fillRect(0, H - 130, W, 130);
+    ctx.fillRect(0, 0, 36, H);
+    ctx.fillRect(W - 36, 0, 36, H);
+
+    ctx.fillStyle = col2;
+    ctx.fillRect(36, 210, W - 72, 8);
+    ctx.fillRect(36, H - 138, W - 72, 8);
+
+    const mark = ((state.name || "").trim() || pack.brand || "YOUR MARK").slice(0, 22);
+    ctx.beginPath();
+    roundRect(ctx, 170, 48, W - 340, 128, 64);
+    ctx.fillStyle = sultan ? "#7a1f1f" : col2;
+    ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "#1a1408";
+    ctx.stroke();
+    ctx.fillStyle = sultan ? "#f6f0e4" : "#e8d5a3";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = "600 86px 'Cormorant Garamond', Georgia, serif";
-    ctx.fillText(mark.toUpperCase().slice(0, 22), W / 2, 224);
-    ctx.font = "600 18px Manrope, sans-serif";
-    ctx.fillText("PACKED AT SAITH HANIF RICE MILLS", W / 2, 272);
+    ctx.font = "600 64px 'Cormorant Garamond', Georgia, serif";
+    ctx.fillText(mark, W / 2, 112);
 
     ctx.fillStyle = "#f6f0e4";
-    ctx.font = "700 42px Manrope, sans-serif";
-    ctx.fillText((state.variety || pack.name).toUpperCase(), W / 2, 380);
-    ctx.font = "500 28px Manrope, sans-serif";
-    ctx.fillStyle = "#e8d5a3";
-    ctx.fillText(`${pack.process}  ·  Sortex clean  ·  Jhabran`, W / 2, 428);
+    ctx.font = "700 36px Manrope, sans-serif";
+    ctx.fillText((pack.name || "").replace(pack.brand, "").trim().toUpperCase() || pack.name.toUpperCase(), W / 2, 290);
+    if (pack.urdu) {
+      ctx.font = "500 34px 'Noto Nastaliq Urdu', serif";
+      ctx.fillStyle = "#e8d5a3";
+      ctx.fillText(pack.urdu, W / 2, 350);
+    }
 
-    const show1121 = /1121|Kainat/i.test(pack.name + pack.variety);
+    const show1121 = /1121/i.test(pack.name + pack.variety);
     if (show1121) {
       ctx.fillStyle = "#e8d5a3";
-      ctx.font = "600 168px 'Cormorant Garamond', Georgia, serif";
-      ctx.fillText("1121", W / 2, 560);
+      ctx.font = "600 150px 'Cormorant Garamond', Georgia, serif";
+      ctx.fillText("1121", W / 2, 470);
     }
 
     if (plateImg) {
-      const pw = 560, ph = 320;
+      const pw = 520, ph = 300;
       const px = (W - pw) / 2;
-      const py = show1121 ? 620 : 500;
+      const py = show1121 ? 540 : 400;
       ctx.save();
-      roundRect(ctx, px, py, pw, ph, 18);
+      ctx.beginPath();
+      ctx.ellipse(W / 2, py + ph / 2, pw / 2, ph / 2, 0, 0, Math.PI * 2);
       ctx.clip();
       ctx.drawImage(plateImg, px, py, pw, ph);
       ctx.restore();
-      ctx.strokeStyle = "rgba(232,213,163,0.7)";
-      ctx.lineWidth = 3;
-      roundRect(ctx, px, py, pw, ph, 18);
+      ctx.beginPath();
+      ctx.ellipse(W / 2, py + ph / 2, pw / 2, ph / 2, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = "#e8d5a3";
+      ctx.lineWidth = 5;
       ctx.stroke();
     }
 
-    ctx.fillStyle = "rgba(6,20,14,0.55)";
-    roundRect(ctx, 90, H - 280, 200, 88, 12);
-    ctx.fill();
-    roundRect(ctx, W - 290, H - 280, 200, 88, 12);
-    ctx.fill();
     ctx.fillStyle = "#e8d5a3";
-    ctx.font = "700 28px Manrope, sans-serif";
-    ctx.fillText(state.weight || pack.weight, W - 190, H - 244);
-    ctx.font = "600 16px Manrope, sans-serif";
-    ctx.fillText("NET WEIGHT", W - 190, H - 218);
-    ctx.font = "700 22px Manrope, sans-serif";
-    ctx.fillText("100%", 190, H - 244);
-    ctx.font = "600 16px Manrope, sans-serif";
-    ctx.fillText("SORTEX CLEAN", 190, H - 218);
-
-    ctx.fillStyle = "#f6f0e4";
     ctx.font = "700 26px Manrope, sans-serif";
-    ctx.fillText("SAITH HANIF RICE MILLS  ·  JHABRAN", W / 2, H - 88);
-    ctx.font = "500 18px Manrope, sans-serif";
-    ctx.fillStyle = "#e8d5a3";
-    ctx.fillText("Punjab, Pakistan", W / 2, H - 56);
+    ctx.fillText(`${pack.process.toUpperCase()}  ·  ${state.weight || pack.weight}  ·  SORTEX CLEAN`, W / 2, H - 200);
+
+    ctx.fillStyle = "#1a1408";
+    ctx.font = "700 28px Manrope, sans-serif";
+    ctx.fillText("SAITH HANIF RICE MILLS  JHABRAN", W / 2, H - 70);
     return c;
   };
 
   const drawNameplate = (text) => {
     const c = document.createElement("canvas");
-    c.width = 1024; c.height = 280;
+    c.width = 1024; c.height = 260;
     const ctx = c.getContext("2d");
-    ctx.clearRect(0, 0, 1024, 280);
     const foil = ctx.createLinearGradient(0, 0, 1024, 0);
     foil.addColorStop(0, "#8a6a2a");
-    foil.addColorStop(0.5, "#e8d5a3");
+    foil.addColorStop(0.5, "#f0e0b0");
     foil.addColorStop(1, "#8a6a2a");
-    ctx.fillStyle = "rgba(10,18,12,0.88)";
-    roundRect(ctx, 36, 28, 952, 224, 16);
+    ctx.fillStyle = foil;
+    roundRect(ctx, 40, 36, 944, 188, 90);
     ctx.fill();
-    ctx.strokeStyle = foil;
-    ctx.lineWidth = 4;
-    roundRect(ctx, 36, 28, 952, 224, 16);
+    ctx.fillStyle = "#123226";
+    roundRect(ctx, 70, 56, 884, 148, 74);
+    ctx.fill();
+    ctx.strokeStyle = "#1a1408";
+    ctx.lineWidth = 3;
+    roundRect(ctx, 70, 56, 884, 148, 74);
     ctx.stroke();
     ctx.fillStyle = "#e8d5a3";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = "600 72px 'Cormorant Garamond', Georgia, serif";
-    ctx.fillText(text.toUpperCase().slice(0, 24), 512, 118);
-    ctx.font = "600 18px Manrope, sans-serif";
-    ctx.fillStyle = "#f6f0e4";
-    ctx.fillText("Packed at Saith Hanif Rice Mills, Jhabran", 512, 186);
+    ctx.font = "600 62px 'Cormorant Garamond', Georgia, serif";
+    ctx.fillText(text.toUpperCase().slice(0, 22), 512, 118);
+    ctx.font = "600 16px Manrope, sans-serif";
+    ctx.fillText("Packed at Saith Hanif Rice Mills, Jhabran", 512, 168);
     return c;
   };
 
@@ -437,7 +444,7 @@
     const usesCanvas = () => {
       const colorChanged = state.color.toLowerCase() !== pack.color.toLowerCase();
       const weightChanged = state.weight !== pack.weight;
-      return designMode || colorChanged || weightChanged;
+      return colorChanged || weightChanged;
     };
 
     const refreshFront = () => {
