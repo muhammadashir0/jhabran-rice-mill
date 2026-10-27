@@ -1,4 +1,5 @@
 (() => {
+  document.documentElement.classList.add("js");
   const header = document.querySelector(".site-header");
   const menuBtn = document.querySelector(".menu-btn");
   const nav = document.querySelector(".nav");
@@ -113,6 +114,20 @@
     window.open(`https://wa.me/923133332101?text=${text}`, "_blank");
     const note = form.querySelector(".form-note");
     if (note) note.textContent = "Opening WhatsApp to +92 313 3332101. You may also email saithhanifsailaricemills@gmail.com.";
+  });
+
+  document.querySelectorAll("[data-size]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const v = btn.getAttribute("data-size");
+      document.querySelectorAll("[data-size]").forEach((b) => b.classList.toggle("is-on", b === btn));
+      const sel = document.querySelector("[data-pack-weight]");
+      if (sel) {
+        [...sel.options].forEach((o) => {
+          if (o.textContent.trim() === v) o.selected = true;
+        });
+        sel.dispatchEvent(new Event("change"));
+      }
+    });
   });
 
   const filters = document.querySelectorAll(".filter-btn");
@@ -365,16 +380,19 @@
       reveal.observe(el);
     });
     document.querySelectorAll("[data-aos]").forEach((el, idx) => {
-      if (el.closest(".hero")) {
-        el.classList.add("is-in");
-        return;
-      }
+      if (el.closest(".hero")) return;
       el.style.transitionDelay = `${Math.min(idx % 4, 3) * 120}ms`;
       reveal.observe(el);
     });
     setTimeout(() => {
+      document.querySelectorAll("[data-aos]:not(.is-in), .inview:not(.is-in)").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < innerHeight * 0.92) el.classList.add("is-in");
+      });
+    }, 600);
+    setTimeout(() => {
       document.querySelectorAll("[data-aos], .inview").forEach((el) => el.classList.add("is-in"));
-    }, 1200);
+    }, 5000);
 
     const hist = document.querySelector("[data-hist]");
     if (hist) {

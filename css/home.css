@@ -326,7 +326,7 @@
 .kr-join p { color: #3d4d44; margin: 0 0 28px; }
 .kr-join .btn-row { justify-content: center; }
 
-[data-aos] { opacity: 1; transform: none; }
+/* Motion lives in style.css — do not zero-out [data-aos] here. */
 
 @media (max-width: 980px) {
   .kr-about-grid,
