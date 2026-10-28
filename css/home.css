@@ -569,6 +569,49 @@ body.home .site-header.scrolled {
   .home .hero-pack { display: none; }
 }
 
+/* Slide 2 — light pack campaign (KRBL class, mill identity) */
+.home .slide-campaign .hero-shade {
+  background: linear-gradient(180deg, rgba(255,252,247,0.18) 0%, rgba(255,252,247,0) 36%, rgba(255,252,247,0) 100%);
+}
+.home .slide-campaign .hero-content.hero-center {
+  top: 0;
+  bottom: auto;
+  align-items: center;
+  text-align: center;
+  padding-top: calc(var(--header-h) + 22px);
+  padding-bottom: 0;
+}
+.home .slide-campaign .hero-center > * { max-width: min(34rem, 100%); }
+.home .slide-campaign .hero-center h2 {
+  color: #5c3317;
+  text-shadow: none;
+  max-width: 16ch;
+  font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+  margin: 0 0 16px;
+}
+.home .slide-campaign .hero-center h2 em { color: #8a5a2b; }
+.home .slide-campaign .kicker { color: #8a6a2a; letter-spacing: 0.16em; }
+.home .slide-campaign .hero-actions { justify-content: center; }
+.home .hero-slides .slide-campaign.is-on img,
+.hero-slides .slide.slide-campaign.is-on img {
+  animation: none;
+  transform: none;
+}
+.home .slide-campaign > img { object-position: 62% center; }
+@media (min-width: 900px) {
+  .home .slide-campaign > img { object-position: center center; }
+}
+@media (max-width: 720px) {
+  .home .slide-campaign .hero-content.hero-center {
+    padding-top: calc(var(--header-h) + 12px);
+  }
+  .home .slide-campaign .hero-center h2 {
+    font-size: clamp(1.35rem, 6.2vw, 1.85rem);
+    max-width: 14ch;
+  }
+  .home .slide-campaign > img { object-position: 78% 55%; }
+}
+
 .about-page .page-hero {
   min-height: 100svh;
   min-height: 100dvh;
