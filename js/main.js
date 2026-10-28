@@ -98,6 +98,7 @@
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
+    if (data.website) return;
     const lines = [
       `Assalam o Alaikum, I would like to enquire with Saith Hanif Rice Mills.`,
       ``,
@@ -106,8 +107,10 @@
       `Email: ${data.email || ""}`,
       `Phone: ${data.phone || ""}`,
       `Country / destination: ${data.country || ""}`,
-      `Product: ${data.product || ""}`,
+      `Product: ${data.product || data.variety || ""}`,
+      `Packaging: ${data.packaging || ""}`,
       `Quantity: ${data.quantity || ""}`,
+      `Destination port: ${data.port || ""}`,
       `Message: ${data.message || ""}`,
     ];
     const text = encodeURIComponent(lines.join("\n"));
@@ -194,10 +197,11 @@
     const dotsWrap = document.querySelector("[data-dots]");
     const countEl = document.querySelector("[data-hero-count]");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const delay = reduce ? 9000 : (document.body.classList.contains("home") ? 5000 : 4500);
+    const delay = reduce ? 9000 : (document.body.classList.contains("home") ? 7000 : 4500);
     hero.style.setProperty("--hero-ms", delay + "ms");
     let i = 0;
     let timer = 0;
+    let hovering = false;
     const pad = (n) => String(n).padStart(2, "0");
 
     const runVideo = (v, on) => {
@@ -269,7 +273,11 @@
 
     const arm = () => {
       clearInterval(timer);
-      timer = setInterval(() => show(i + 1), delay);
+      if (reduce) return;
+      timer = setInterval(() => {
+        if (hovering) return;
+        show(i + 1);
+      }, delay);
     };
 
     const go = (n) => {
@@ -282,6 +290,10 @@
 
     document.querySelector("[data-hero-prev]")?.addEventListener("click", () => go(i - 1));
     document.querySelector("[data-hero-next]")?.addEventListener("click", () => go(i + 1));
+    hero.querySelectorAll(".hero-arrow, .hero-pager, .hero-content").forEach((el) => {
+      el.addEventListener("mouseenter", () => { hovering = true; });
+      el.addEventListener("mouseleave", () => { hovering = false; });
+    });
 
     let touchX = 0;
     hero.addEventListener("touchstart", (e) => {

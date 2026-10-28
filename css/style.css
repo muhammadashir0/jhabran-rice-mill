@@ -1085,6 +1085,12 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   border: 1px solid var(--line);
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
 label {
   display: grid;
   gap: 6px;
