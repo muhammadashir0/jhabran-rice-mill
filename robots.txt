@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://muhammadashir0.github.io/jhabran-rice-mill/sitemap.xml

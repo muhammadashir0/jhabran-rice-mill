@@ -805,3 +805,29 @@ body.home .site-header.scrolled {
   .lead-page .hero-center h1 { max-width: 12ch; }
   .lead-principles article { padding: 24px 20px; }
 }
+
+.home-range { padding: 80px 0; background: #fff; }
+.home-range h2 { max-width: 16ch; }
+.home-range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 36px;
+}
+.home .hero-center h2 {
+  font-size: clamp(2.2rem, 5.8vw, 4.4rem);
+  max-width: 16ch;
+  margin: 0 0 16px;
+  line-height: 1.08;
+  color: #fff;
+  font-weight: 500;
+}
+.home .hero-center h2 em { font-style: italic; color: var(--gold-soft); }
+@media (max-width: 980px) {
+  .home-range-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .home-range { padding: 48px 0 40px; }
+  .home-range-grid { grid-template-columns: 1fr 1fr; }
+  .home .hero-center h2 { font-size: clamp(1.85rem, 8.4vw, 2.45rem); max-width: 14ch; }
+}
