@@ -569,8 +569,167 @@ body.home .site-header.scrolled {
   .home .hero-pack { display: none; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  [data-aos] { opacity: 1; transform: none; transition: none; }
-  .home .slide .hero-content,
-  .home .hero-pack { opacity: 1; transform: none; transition: none; }
+.about-page .page-hero {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+.about-page .hero-sub {
+  margin: 8px 0 14px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  color: var(--gold-soft);
+}
+.about-accent {
+  margin: 22px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  color: var(--gold-deep);
+}
+.lede.dark { color: #3d4d44; max-width: 52ch; }
+.highlights {
+  background: #0b2418;
+  color: var(--ivory);
+  padding: 72px 0;
+}
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+.highlight-grid article {
+  padding: 8px 22px;
+  border-right: 1px solid rgba(198,161,91,0.22);
+}
+.highlight-grid article.span { border-right: 0; }
+.highlight-grid b {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  color: var(--gold);
+  line-height: 1.05;
+}
+.highlight-grid h3 {
+  margin: 12px 0 8px;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.highlight-grid p { margin: 0; color: rgba(246,240,228,0.72); font-size: 0.92rem; }
+.journey { padding: 88px 0; background: #fffdf8; }
+.journey h2 { margin-bottom: 12px; }
+.journey-list {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 48px;
+}
+.journey-list li {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+}
+.journey-list li:nth-child(even) { direction: rtl; }
+.journey-list li:nth-child(even) > * { direction: ltr; }
+.journey-media {
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 16 / 10;
+  background: var(--forest);
+}
+.journey-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.journey-list .n {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 8px;
+}
+.journey-list h3 { margin: 0 0 10px; }
+.journey-list p { margin: 0; color: #3d4d44; }
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.purpose-vision,
+.purpose-mission { padding: 88px 8vw; }
+.purpose-vision {
+  background: #0b2418;
+  color: var(--ivory);
+}
+.purpose-vision .title-small.light,
+.purpose-vision .eyebrow { color: var(--gold); }
+.purpose-vision p { color: rgba(246,240,228,0.82); }
+.purpose-mission { background: #f7f3e9; color: var(--ink); }
+.purpose-mission .eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.purpose-vision h2,
+.purpose-mission h2 { max-width: 14ch; margin: 10px 0 16px; }
+.values-sec { padding: 88px 0; background: #fffdf8; }
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 36px;
+}
+.value-grid article {
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+.value-grid article:hover { transform: translateY(-6px); border-color: var(--gold); }
+.value-grid .vi {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 16px;
+  border: 1.5px solid var(--gold-deep);
+  border-radius: 50%;
+  position: relative;
+}
+.value-grid .vi::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1.5px solid var(--forest);
+  border-radius: 50%;
+}
+.value-grid .n {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0 0 8px;
+}
+.value-grid h3 { margin: 0 0 10px; }
+.value-grid p { margin: 0; color: #3d4d44; }
+
+@media (max-width: 980px) {
+  .highlight-grid,
+  .purpose-grid,
+  .value-grid { grid-template-columns: 1fr 1fr; }
+  .highlight-grid article { border-right: 0; border-bottom: 1px solid rgba(198,161,91,0.22); padding: 22px 8px; }
+  .journey-list li,
+  .journey-list li:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
+  .purpose-vision,
+  .purpose-mission { padding: 56px 7vw; }
+}
+@media (max-width: 640px) {
+  .highlight-grid,
+  .value-grid { grid-template-columns: 1fr; }
 }
