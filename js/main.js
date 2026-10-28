@@ -25,8 +25,33 @@
   document.querySelectorAll(".nav a").forEach((a) => {
     a.addEventListener("click", () => setNav(false));
   });
+
+  const setSub = (item, open) => {
+    item.classList.toggle("open", open);
+    item.querySelector(".nav-toggle")?.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  document.querySelectorAll(".nav-item.has-sub").forEach((item) => {
+    const btn = item.querySelector(".nav-toggle");
+    btn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const open = !item.classList.contains("open");
+      document.querySelectorAll(".nav-item.has-sub").forEach((other) => {
+        if (other !== item) setSub(other, false);
+      });
+      setSub(item, open);
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav-item.has-sub")) {
+      document.querySelectorAll(".nav-item.has-sub").forEach((item) => setSub(item, false));
+    }
+  });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setNav(false);
+    if (e.key === "Escape") {
+      setNav(false);
+      document.querySelectorAll(".nav-item.has-sub").forEach((item) => setSub(item, false));
+    }
   });
 
   const videos = () => Array.from(document.querySelectorAll("video"));

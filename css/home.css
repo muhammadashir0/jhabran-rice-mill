@@ -733,3 +733,75 @@ body.home .site-header.scrolled {
   .highlight-grid,
   .value-grid { grid-template-columns: 1fr; }
 }
+
+/* Leadership page */
+.lead-page .hero-center h1 { max-width: 14ch; }
+.lead-founder-name {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  margin: 0 0 16px;
+}
+.lead-principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 40px;
+}
+.lead-principles article {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+.lead-principles article:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+.lead-principles .n {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0 0 12px;
+}
+.lead-principles h3 { margin: 0 0 12px; font-size: 1.45rem; }
+.lead-principles p { margin: 0; color: #3d4d44; }
+.brand-kicker {
+  margin: -6px 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.lead-close {
+  background: #0b2418;
+  color: var(--ivory);
+  padding: 88px 0;
+  text-align: center;
+}
+.lead-close p {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 38ch;
+  margin: 0 auto 18px;
+  color: rgba(246,240,228,0.88);
+}
+.lead-close p:last-child { margin-bottom: 0; font-style: normal; font-size: clamp(1.05rem, 2vw, 1.35rem); }
+.lead-page .kr-join { text-align: left; }
+.lead-page .kr-join .lp-contact { margin: 0; max-width: 44rem; }
+.lead-page .kr-join .btn-row { justify-content: flex-start; }
+.lead-page #philosophy { background: #f6f0e4; }
+.lead-page #ahead { background: #fff; }
+@media (max-width: 980px) {
+  .lead-principles { grid-template-columns: 1fr; }
+  .lead-close { padding: 56px 0; }
+}
+@media (max-width: 720px) {
+  .lead-page .hero-center h1 { max-width: 12ch; }
+  .lead-principles article { padding: 24px 20px; }
+}
