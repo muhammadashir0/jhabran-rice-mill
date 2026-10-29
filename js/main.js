@@ -124,6 +124,10 @@
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
     if (data.website) return;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
     const lines = [
       `Assalam o Alaikum, I would like to enquire with Saith Hanif Rice Mills.`,
       ``,
@@ -141,7 +145,10 @@
     const text = encodeURIComponent(lines.join("\n"));
     window.open(`https://wa.me/923133332101?text=${text}`, "_blank");
     const note = form.querySelector(".form-note");
-    if (note) note.textContent = "Opening WhatsApp to +92 313 3332101. You may also email saithhanifsailaricemills@gmail.com.";
+    if (note) {
+      note.setAttribute("aria-live", "polite");
+      note.textContent = "Opening WhatsApp to +92 313 3332101. You may also email saithhanifsailaricemills@gmail.com.";
+    }
   });
 
   document.querySelectorAll("[data-size]").forEach((btn) => {
@@ -496,10 +503,10 @@
   const world = document.querySelector("[data-world]");
   if (world) {
     const copy = {
-      asia: "<p>Asian ports — South, East and South-East. Same mill, same sack. Write the destination with the pack.</p>",
-      me: "<p>Gulf and the wider Middle East. Bags leave Jhabran for the port you name.</p>",
-      eu: "<p>European ports. You appoint inspection at load. Cook the sample before you argue the price.</p>",
-      all: "<p>From Jandiala Road, Jhabran the bags go to <strong>Asia</strong>, the <strong>Middle East</strong>, and <strong>Europe</strong>. Same mill, same sack. Write the destination port with the pack.</p>",
+      asia: "<p>We welcome trade enquiries that name an Asian discharge port. Write the product, quantity and port.</p>",
+      me: "<p>We welcome trade enquiries that name a Middle East discharge port. Write the product, quantity and port.</p>",
+      eu: "<p>We welcome trade enquiries that name a European discharge port. Write the product, quantity and port.</p>",
+      all: "<p>Select a region, then send the mill the pack, quantity and port. Availability and shipment are confirmed for each order.</p>",
     };
     const panel = world.querySelector("[data-world-panel]");
     const setRegion = (key) => {

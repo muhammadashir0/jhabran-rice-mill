@@ -64,13 +64,13 @@
     "wazir-sella": {
       brand: "Wazir", name: "Wazir Kainat Basmati Sella", urdu: "وزیر کائینات باسمتی سیلہ",
       variety: "Kainat basmati", process: "Sella", weight: "25 kg",
-      color: "#6b1d3a", accent: "#e8d5a3", cut: "assets/products/cut/studio-wazir-sella.png",
+      color: "#6b1d3a", accent: "#e8d5a3", cut: "assets/products/studio-wazir-sella.jpg",
       waName: "Wazir Kainat Basmati Sella"
     },
     "wazir-steam": {
       brand: "Wazir", name: "Wazir Kainat Steam 1121", urdu: "وزیر کائینات سٹیم 1121",
       variety: "1121 Kainat extra-long", process: "Steam", weight: "25 kg",
-      color: "#0e4d4d", accent: "#e8d5a3", cut: "assets/products/cut/studio-wazir-steam.png",
+      color: "#0e4d4d", accent: "#e8d5a3", cut: "assets/products/studio-wazir-steam.jpg",
       waName: "Wazir Kainat Steam 1121"
     }
   };
