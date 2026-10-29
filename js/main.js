@@ -300,6 +300,7 @@
         dot.classList.add("is-on");
       }
       if (countEl) countEl.textContent = pad(i + 1) + " / " + pad(slides.length);
+      hero.classList.toggle("is-campaign", slides[i].classList.contains("slide-campaign"));
       preloadSlide((i + 1) % slides.length);
     };
 
