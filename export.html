@@ -17,8 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=37">
-  <link rel="stylesheet" href="css/home.css?v=36">
+  <link rel="stylesheet" href="css/style.css?v=39">
+  <link rel="stylesheet" href="css/home.css?v=43">
 </head>
 <body class="home">
   <a class="skip" href="#content">Skip to content</a>
@@ -55,7 +55,10 @@
 
     <section class="hero page-hero hero-film">
       <div class="hero-media">
-        <img src="assets/images/hero-slide-export.jpg" alt="Rice prepared for dispatch from the mill" fetchpriority="high">
+        <picture>
+          <source media="(max-width: 720px)" srcset="assets/images/hero-slide-export-m.jpg">
+          <img src="assets/images/hero-slide-export.jpg" alt="Rice prepared for dispatch from the mill" fetchpriority="high">
+        </picture>
       </div>
       <div class="hero-shade"></div>
       <div class="hero-content hero-center">

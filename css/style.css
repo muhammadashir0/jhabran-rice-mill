@@ -526,13 +526,16 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
 }
 .hero-media,
 .hero-media video,
-.hero-media img {
+.hero-media img,
+.hero-media picture,
+.hero-media picture img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.hero-media picture { display: block; }
 .hero-media video { transform: scale(1.04); }
 .hero-shade {
   position: absolute;
@@ -638,7 +641,9 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   z-index: 1;
 }
 .hero-slides .slide img,
-.hero-slides .slide video {
+.hero-slides .slide video,
+.hero-slides .slide picture,
+.hero-slides .slide picture img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -647,6 +652,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   display: block;
   pointer-events: none;
 }
+.hero-slides .slide picture { display: block; }
 .hero-slides .slide.is-on img {
   animation: ken 9s var(--ease) forwards;
 }
@@ -857,11 +863,11 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
 .page-hero h1 { max-width: 16ch; }
 .products-campaign {
   background: #e8c43a;
-  min-height: min(78svh, 720px);
+  min-height: min(100svh, 920px);
   overflow: hidden;
 }
 .products-campaign .hero-media img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   width: 100%;
   height: 100%;

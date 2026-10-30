@@ -604,17 +604,17 @@ body.home .site-header.scrolled {
   animation: none;
   transform: none;
 }
-.home .hero-slides .slide.slide-campaign > img {
-  object-fit: contain;
+.home .hero-slides .slide.slide-campaign img {
+  object-fit: cover;
   object-position: center center;
 }
 @media (max-width: 720px) {
   .home .slide-campaign .hero-content.hero-center {
     padding: 0 20px 28px;
   }
-  .home .hero-slides .slide.slide-campaign > img {
-    object-fit: contain;
-    object-position: center center;
+  .home .hero-slides .slide.slide-campaign img {
+    object-fit: cover;
+    object-position: center top;
   }
 }
 
