@@ -541,7 +541,7 @@ main {
   inset: auto;
   width: 100%;
   height: auto;
-  max-height: calc(100svh - var(--header-h) - var(--safe-top));
+  max-height: none;
   object-fit: contain;
   object-position: center center;
   display: block;
@@ -665,7 +665,7 @@ main {
   inset: auto;
   width: 100%;
   height: auto;
-  max-height: calc(100svh - var(--header-h) - var(--safe-top));
+  max-height: none;
   object-fit: contain;
   object-position: center center;
   display: block;
@@ -900,7 +900,7 @@ main {
   object-position: center center;
   width: 100%;
   height: auto;
-  max-height: calc(100svh - var(--header-h) - var(--safe-top));
+  max-height: none;
 }
 .products-campaign .hero-shade { display: none; }
 .products-campaign .hero-content {
