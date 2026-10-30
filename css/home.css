@@ -596,20 +596,26 @@ body.home .site-header.scrolled {
   align-self: flex-end;
   justify-content: flex-end;
 }
+.home .hero-slides .slide.slide-campaign {
+  background: #f3eee4;
+}
 .home .hero-slides .slide-campaign.is-on img,
 .hero-slides .slide.slide-campaign.is-on img {
   animation: none;
   transform: none;
 }
-.home .slide-campaign > img {
-  object-fit: cover;
-  object-position: center 8%;
+.home .hero-slides .slide.slide-campaign > img {
+  object-fit: contain;
+  object-position: center center;
 }
 @media (max-width: 720px) {
   .home .slide-campaign .hero-content.hero-center {
     padding: 0 20px 28px;
   }
-  .home .slide-campaign > img { object-position: 78% 18%; }
+  .home .hero-slides .slide.slide-campaign > img {
+    object-fit: contain;
+    object-position: center center;
+  }
 }
 
 .about-page .page-hero {
