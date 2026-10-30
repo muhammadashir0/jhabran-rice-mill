@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 96px;
+  padding-bottom: 24px;
 }
 .home .hero-center > * { max-width: min(34rem, 100%); }
 .home .hero-center .lede,
@@ -438,7 +438,8 @@
 }
 @media (max-width: 720px) {
   .home .slide .hero-content {
-    padding: 0 20px 36px;
+    position: relative;
+    padding: 16px 16px 20px;
   }
   .home .hero-center {
     text-align: left;
@@ -499,26 +500,27 @@ body.home .site-header.scrolled {
   border-bottom-color: rgba(198,161,91,0.18);
 }
 .home .slide .hero-shade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  display: none;
+}
+.home .slide:not(.slide-campaign) .hero-content {
+  background: #0B241C;
 }
 .home .slide .hero-content {
-  position: absolute;
+  position: relative;
   top: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: auto;
+  right: auto;
+  bottom: auto;
   height: auto;
   width: auto;
   margin: 0;
   z-index: 3;
-  padding: 0 96px 56px;
+  padding: 18px 48px 24px;
   box-sizing: border-box;
   justify-content: flex-end;
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: none;
+  transition: opacity 0.45s ease;
   pointer-events: none;
 }
 .home .slide.is-on .hero-content {
@@ -585,19 +587,21 @@ body.home .site-header.scrolled {
 /* Slide 2 — packs only; no overlay type, no pager on the portrait */
 .home .slide-campaign .hero-shade { background: none; }
 .home .slide-campaign .hero-content.hero-center {
+  position: relative;
   top: auto;
-  bottom: 0;
+  bottom: auto;
   height: auto;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 0 24px 22px;
+  padding: 14px 20px 18px;
+  background: #0B241C;
 }
 .home .slide-campaign .hero-actions {
   align-self: center;
   justify-content: center;
 }
 .home .hero-slides .slide.slide-campaign {
-  background: #efe6d4;
+  background: #f4efe6;
 }
 .home .hero-slides .slide-campaign.is-on img,
 .hero-slides .slide.slide-campaign.is-on img {
@@ -605,13 +609,13 @@ body.home .site-header.scrolled {
   transform: none;
 }
 .home .hero-slides .slide.slide-campaign img {
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
 }
 @media (max-width: 720px) {
   .home .slide-campaign .hero-content.hero-center {
     align-items: center;
-    padding: 0 16px 20px;
+    padding: 12px 16px 16px;
   }
   .home .slide-campaign .hero-actions {
     align-self: center;
@@ -619,14 +623,13 @@ body.home .site-header.scrolled {
     flex-wrap: wrap;
   }
   .home .hero-slides .slide.slide-campaign img {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
   }
 }
 
 .about-page .page-hero {
-  min-height: 100svh;
-  min-height: 100dvh;
+  min-height: 0;
 }
 .about-page .hero-sub {
   margin: 8px 0 14px;
