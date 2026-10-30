@@ -920,7 +920,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   box-shadow: none;
 }
 .product-card .shot {
-  background: none;
+  background: #f4efe4;
   padding: 0;
   min-height: 0;
   display: block;
@@ -928,7 +928,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
 .product-card .shot img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .product-card .body { padding: 22px 24px 26px; }
 .product-card .tag {
@@ -1768,7 +1768,7 @@ textarea { min-height: 140px; resize: vertical; }
 }
 .product-card .shot,
 .pack-stage {
-  background: transparent;
+  background: #f4efe4;
   padding: 0;
   min-height: 0;
   aspect-ratio: 4 / 5;
@@ -1783,17 +1783,17 @@ textarea { min-height: 140px; resize: vertical; }
   width: 100%;
   height: 100%;
   max-width: none;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   filter: none;
   transform: none;
   animation: none;
-  transition: transform 0.5s var(--ease);
+  transition: none;
 }
 .product-card:hover .shot img,
 .product-card:hover .pack-stage img {
   animation: none;
-  transform: scale(1.04);
+  transform: none;
   filter: none;
 }
 .chip {
@@ -2561,10 +2561,12 @@ textarea { min-height: 140px; resize: vertical; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.9s var(--ease);
+  object-fit: contain;
+  object-position: center 30%;
+  padding: 18px 18px 80px;
+  transition: none;
 }
-.range-tile:hover img { transform: scale(1.07); }
+.range-tile:hover img { transform: none; }
 .range-tile::after {
   content: "";
   position: absolute;
@@ -3128,9 +3130,9 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   .field-box:hover { transform: translateY(-8px); }
   .product-card .shot img,
   .field-img img {
-    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: none;
   }
-  .product-card:hover .shot img { transform: scale(1.06); }
+  .product-card:hover .shot img { transform: none; }
 }
 .pdp-shot {
   position: sticky;
