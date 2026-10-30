@@ -589,12 +589,12 @@ body.home .site-header.scrolled {
   bottom: 0;
   height: auto;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding: 0 96px 48px;
+  align-items: flex-end;
+  padding: 0 40px 28px;
 }
 .home .slide-campaign .hero-actions {
-  align-self: flex-start;
-  justify-content: flex-start;
+  align-self: flex-end;
+  justify-content: flex-end;
 }
 .home .hero-slides .slide-campaign.is-on img,
 .hero-slides .slide.slide-campaign.is-on img {
