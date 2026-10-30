@@ -25,10 +25,10 @@
 .home .hero-center .btn-row,
 .home .hero-center .urdu { max-width: 32rem; }
 .home .hero-center h1 {
-  font-size: clamp(2rem, 4.4vw, 3.4rem);
-  max-width: 14ch;
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  max-width: 13ch;
 }
-.home .hero-center .lede { max-width: 34rem; }
+.home .hero-center .lede { max-width: 28rem; }
 .home .hero-shade {
   background:
     linear-gradient(90deg, rgba(6,20,14,0.62) 0%, rgba(6,20,14,0.22) 48%, rgba(6,20,14,0.12) 100%),
@@ -149,12 +149,16 @@
 }
 .home .hero-shade {
   background:
-    linear-gradient(90deg, rgba(6,20,14,0.62) 0%, rgba(6,20,14,0.22) 48%, rgba(6,20,14,0.12) 100%),
-    linear-gradient(180deg, rgba(6,20,14,0.18) 0%, rgba(6,20,14,0.1) 42%, rgba(6,20,14,0.78) 100%);
+    linear-gradient(90deg, rgba(6,20,14,0.82) 0%, rgba(6,20,14,0.52) 34%, rgba(6,20,14,0.12) 62%, rgba(6,20,14,0.04) 100%),
+    linear-gradient(180deg, rgba(6,20,14,0.2) 0%, transparent 36%, rgba(6,20,14,0.45) 100%);
 }
 .home .hero-center h1,
 .home .hero-center .lede {
-  text-shadow: 0 2px 28px rgba(6,20,14,0.55);
+  text-shadow: 0 2px 18px rgba(6,20,14,0.75);
+}
+.home .homepage-banner > .hero-pager,
+.home .homepage-banner > .scroll-discover {
+  display: none;
 }
 .home .scroll-discover {
   left: 50%;
@@ -427,7 +431,6 @@
   .lp-legacy-grid,
   .lp-split { grid-template-columns: 1fr; }
   .tl-item-h { flex-basis: 70%; }
-  .home .scroll-discover { display: flex; }
   .kr-about-media { max-width: 420px; }
   .vm-grid,
   .values-grid,
@@ -435,7 +438,7 @@
 }
 @media (max-width: 720px) {
   .home .slide .hero-content {
-    padding: 0 20px 108px;
+    padding: 0 20px 36px;
   }
   .home .hero-center {
     text-align: left;
@@ -506,10 +509,11 @@ body.home .site-header.scrolled {
   left: 0;
   right: 0;
   bottom: 0;
+  height: auto;
   width: auto;
   margin: 0;
   z-index: 3;
-  padding: 0 88px 128px;
+  padding: 0 96px 56px;
   box-sizing: border-box;
   justify-content: flex-end;
   opacity: 0;
@@ -578,37 +582,15 @@ body.home .site-header.scrolled {
   .home .hero-pack { display: none; }
 }
 
-/* Slide 2 — light pack campaign: copy in the ivory band, CTAs off the packs */
-.home .slide-campaign .hero-shade {
-  background: linear-gradient(180deg, rgba(255,252,247,0.12) 0%, rgba(255,252,247,0) 28%, rgba(255,252,247,0) 100%);
-}
+/* Slide 2 — packs only; no overlay type, no pager on the portrait */
+.home .slide-campaign .hero-shade { background: none; }
 .home .slide-campaign .hero-content.hero-center {
-  top: 0;
+  top: auto;
   bottom: 0;
-  justify-content: space-between;
+  height: auto;
+  justify-content: flex-end;
   align-items: flex-start;
-  text-align: left;
-  padding: calc(var(--header-h) + 18px) 88px 108px;
-}
-.home .slide-campaign .campaign-head {
-  align-self: center;
-  text-align: center;
-  max-width: 22rem;
-}
-.home .slide-campaign .hero-center > * { max-width: none; }
-.home .slide-campaign .hero-center h2 {
-  color: #5c3317;
-  text-shadow: none;
-  max-width: 16ch;
-  font-size: clamp(1.35rem, 2.4vw, 2rem);
-  margin: 0;
-  line-height: 1.15;
-}
-.home .slide-campaign .hero-center h2 em { color: #8a5a2b; }
-.home .slide-campaign .kicker {
-  color: #8a6a2a;
-  letter-spacing: 0.16em;
-  margin-bottom: 8px;
+  padding: 0 96px 48px;
 }
 .home .slide-campaign .hero-actions {
   align-self: flex-start;
@@ -619,38 +601,15 @@ body.home .site-header.scrolled {
   animation: none;
   transform: none;
 }
-.home .slide-campaign > img { object-position: 62% center; }
-.home .hero.is-campaign .hero-pager {
-  left: 88px;
-  transform: none;
-  align-items: flex-start;
-}
-.home .hero.is-campaign .scroll-discover {
-  left: 88px;
-  right: auto;
-  transform: none;
-}
-.home .hero.is-campaign .hero-count,
-.home .hero.is-campaign .scroll-discover {
-  color: #5c3317;
-  text-shadow: none;
-}
-@media (min-width: 900px) {
-  .home .slide-campaign > img { object-position: center center; }
+.home .slide-campaign > img {
+  object-fit: cover;
+  object-position: center 8%;
 }
 @media (max-width: 720px) {
   .home .slide-campaign .hero-content.hero-center {
-    padding: calc(var(--header-h) + 10px) 20px 100px;
+    padding: 0 20px 28px;
   }
-  .home .slide-campaign .hero-center h2 {
-    font-size: clamp(1.2rem, 5.4vw, 1.55rem);
-    max-width: 14ch;
-  }
-  .home .slide-campaign > img { object-position: 78% 55%; }
-  .home .hero.is-campaign .hero-pager,
-  .home .hero.is-campaign .scroll-discover {
-    left: 20px;
-  }
+  .home .slide-campaign > img { object-position: 78% 18%; }
 }
 
 .about-page .page-hero {
