@@ -855,6 +855,33 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   padding: calc(var(--header-h) + 36px) 0 40px;
 }
 .page-hero h1 { max-width: 16ch; }
+.products-campaign {
+  background: #e8c43a;
+  min-height: min(78svh, 720px);
+  overflow: hidden;
+}
+.products-campaign .hero-media img {
+  object-fit: contain;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.products-campaign .hero-shade { display: none; }
+.products-campaign .hero-content {
+  padding: 0;
+  pointer-events: none;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* ---------- Film / media frames ---------- */
 .media-frame {
