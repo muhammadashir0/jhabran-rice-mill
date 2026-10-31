@@ -137,8 +137,9 @@
       `Phone: ${data.phone || ""}`,
       `Country / destination: ${data.country || ""}`,
       `Product: ${data.product || data.variety || ""}`,
+      `Processing: ${data.process || ""}`,
       `Packaging: ${data.packaging || ""}`,
-      `Quantity: ${data.quantity || ""}`,
+      `Quantity: ${data.quantity || ""} ${data.unit || ""}`.trim(),
       `Destination port: ${data.port || ""}`,
       `Message: ${data.message || ""}`,
     ];

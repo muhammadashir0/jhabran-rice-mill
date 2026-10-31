@@ -3284,3 +3284,75 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   max-width: 52ch;
 }
 .pdp-faq { margin-top: 12px; }
+
+/* ---------- Trust bar / FAQ / brand landings ---------- */
+.trust-bar {
+  background: var(--ivory);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.trust-bar-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 28px;
+}
+.trust-bar p {
+  margin: 0;
+  font-size: 14px;
+  color: #3d4d44;
+  line-height: 1.45;
+}
+.trust-bar strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--forest);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.faq-sec h2 { max-width: 18ch; }
+.faq-list {
+  margin: 28px 0 0;
+  border-top: 1px solid var(--line);
+}
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 0;
+  font-weight: 600;
+  color: var(--forest);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--gold-deep);
+  line-height: 1;
+}
+.faq-list details[open] summary::after { content: "–"; }
+.faq-list details p {
+  margin: 0 0 16px;
+  max-width: 62ch;
+  color: #3d4d44;
+}
+.brand-intro {
+  padding: 48px 0 12px;
+}
+.brand-intro h1 { max-width: 14ch; }
+.brand-intro .lede { max-width: 54ch; color: #3d4d44; }
+.legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) {
+  .trust-bar-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .trust-bar-inner { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .trust-bar strong { font-size: 1.15rem; }
+}
