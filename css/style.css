@@ -3401,9 +3401,10 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   overflow: hidden;
   isolation: isolate;
   background: #0B241C;
-  height: 520px;
-  min-height: 520px;
-  max-height: 560px;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 1920 / 560;
 }
 .hero.page-hero .hero-media,
 .hero.homepage-banner .hero-slides,
@@ -3509,16 +3510,16 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   background: linear-gradient(180deg, transparent 45%, rgba(6,20,14,0.5) 100%);
 }
 @media (max-width: 1024px) {
-  .hero.page-hero,
+  .hero.page-hero:not(.homepage-banner):not(.products-campaign),
   .hero.homepage-banner {
-    height: 480px;
-    min-height: 430px;
-    max-height: 520px;
+    aspect-ratio: 1920 / 560;
+    height: auto;
   }
 }
 @media (max-width: 720px) {
   .hero.page-hero,
   .hero.homepage-banner {
+    aspect-ratio: auto;
     height: 400px;
     min-height: 360px;
     max-height: 440px;
