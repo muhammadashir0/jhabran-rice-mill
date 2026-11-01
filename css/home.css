@@ -588,14 +588,12 @@ body.home .site-header.scrolled {
 .home .slide-campaign .hero-shade { background: none; }
 .home .slide-campaign .hero-content.hero-center {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   height: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 24px 20px;
-  background: linear-gradient(180deg, transparent, rgba(6, 20, 14, 0.55));
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 28px 0 32px;
+  background: none;
 }
 .home .slide-campaign .hero-actions {
   align-self: center;
@@ -614,15 +612,30 @@ body.home .site-header.scrolled {
   object-position: center center;
 }
 @media (min-width: 721px) {
+  .home .homepage-banner .hero-slides {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+  .home .homepage-banner .hero-slides .slide,
+  .home .homepage-banner .hero-slides .slide.is-on {
+    position: absolute;
+    inset: 0;
+  }
   .home .homepage-banner .hero-slides .slide img,
   .home .homepage-banner .hero-slides .slide picture img {
-    max-height: calc(100svh - var(--header-h) - var(--safe-top));
-    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center 40%;
   }
 }
 @media (max-width: 720px) {
   .home .homepage-banner .hero-slides {
-    height: clamp(280px, 48vh, 400px);
+    height: 100%;
   }
   .home .hero-slides .slide,
   .home .hero-slides .slide.is-on {
@@ -637,24 +650,23 @@ body.home .site-header.scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center 22%;
   }
   .home .slide-campaign .hero-content.hero-center {
-    align-items: center;
-    padding: 12px 16px 16px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 16px 0 20px;
+    background: none;
   }
   .home .slide-campaign .hero-actions {
-    align-self: center;
-    justify-content: center;
+    align-self: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
-  }
-  .home .slide .hero-content {
-    padding: 14px 16px 16px;
   }
 }
 
 .about-page .page-hero {
-  min-height: 0;
+  min-height: 520px;
 }
 .about-page .hero-sub {
   margin: 8px 0 14px;

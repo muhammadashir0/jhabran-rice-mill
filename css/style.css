@@ -21,7 +21,8 @@
   --line: rgba(198, 166, 107, 0.28);
   --shadow: 0 30px 80px rgba(6, 20, 14, 0.28);
   --radius: 10px;
-  --header-h: 56px;
+  --header-h: 80px;
+  --content-width: 1280px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --serif: "Playfair Display", "Times New Roman", Georgia, serif;
@@ -157,11 +158,11 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
 
 /* ---------- Layout ---------- */
 .wrap {
-  width: min(1240px, calc(100% - 48px));
+  width: min(var(--content-width), calc(100% - 80px));
   margin-inline: auto;
 }
 .wrap-wide {
-  width: min(1440px, calc(100% - 40px));
+  width: min(var(--content-width), calc(100% - 80px));
   margin-inline: auto;
 }
 
@@ -211,12 +212,13 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   overflow: visible;
 }
 .site-header .inner {
-  width: min(1440px, calc(100% - 40px));
+  width: min(var(--content-width), calc(100% - 80px));
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  height: 100%;
 }
 .brand {
   display: flex;
@@ -224,7 +226,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   gap: 12px;
   color: var(--gold-soft);
 }
-.brand img { width: 32px; height: 32px; }
+.brand img { width: 48px; height: 48px; }
 .brand-lockup { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-org {
   font-family: var(--sans);
@@ -276,16 +278,16 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   align-items: center;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  gap: 12px 16px;
+  gap: 24px;
 }
 .nav a {
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  font-size: 15px;
+  letter-spacing: 0.01em;
   text-transform: none;
   font-weight: 600;
   color: rgba(246, 240, 228, 0.86);
   position: relative;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 .nav a::after {
   content: "";
@@ -310,8 +312,8 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   padding: 8px 0;
   margin: 0;
   font: inherit;
-  font-size: 13px;
-  letter-spacing: 0.04em;
+  font-size: 15px;
+  letter-spacing: 0.01em;
   font-weight: 600;
   color: rgba(246, 240, 228, 0.86);
   cursor: pointer;
@@ -385,12 +387,12 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
-  padding: 0 14px;
+  height: 46px;
+  padding: 0 18px;
   background: var(--ivory);
   color: var(--forest);
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
@@ -930,7 +932,7 @@ main {
   }
 }
 .page-hero:not(.products-campaign) .hero-media {
-  height: min(42vh, 380px);
+  height: 100%;
   overflow: hidden;
 }
 .page-hero:not(.products-campaign) .hero-media img {
@@ -1683,16 +1685,18 @@ textarea { min-height: 140px; resize: vertical; }
 }
 
 @media (max-width: 1200px) {
-  :root { --header-h: 56px; }
+  :root { --header-h: 72px; }
   .header-cta {
     display: inline-flex;
-    height: 36px;
-    padding: 0 12px;
-    font-size: 13px;
+    height: 42px;
+    padding: 0 14px;
+    font-size: 14px;
     margin-left: auto;
   }
   .site-header .brand-product { display: none; }
-  .brand img { width: 32px; height: 32px; }
+  .brand img { width: 42px; height: 42px; }
+  .nav { gap: 16px; }
+  .nav a { font-size: 14px; }
   .menu-btn {
     display: grid;
     place-items: center;
@@ -2992,7 +2996,7 @@ textarea { min-height: 140px; resize: vertical; }
 
 /* ---------- Phone layout ---------- */
 @media (max-width: 720px) {
-  :root { --header-h: 52px; }
+  :root { --header-h: 64px; }
   html { background-attachment: scroll; }
   html, body { overflow-x: hidden; }
 
@@ -3375,4 +3379,173 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 @media (max-width: 720px) {
   .trust-bar-inner { grid-template-columns: 1fr 1fr; gap: 16px; }
   .trust-bar strong { font-size: 1.15rem; }
+  .wrap,
+  .wrap-wide,
+  .site-header .inner {
+    width: calc(100% - 32px);
+  }
+  .brand img { width: 40px; height: 40px; }
+}
+
+/* =========================================================
+   UNIFIED HEADER + PAGE HERO (all pages)
+   ========================================================= */
+.hero.page-hero,
+.hero.homepage-banner {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0B241C;
+  height: 520px;
+  min-height: 520px;
+  max-height: 560px;
+}
+.hero.page-hero .hero-media,
+.hero.homepage-banner .hero-slides,
+.hero.homepage-banner .hero-slides .slide,
+.hero.homepage-banner .hero-slides .slide.is-on,
+.hero.page-hero .hero-media picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero.page-hero .hero-media img,
+.hero.page-hero .hero-media picture img,
+.hero.homepage-banner .hero-slides .slide img,
+.hero.homepage-banner .hero-slides .slide picture,
+.hero.homepage-banner .hero-slides .slide picture img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  margin: 0;
+  max-height: none;
+}
+.hero.page-hero .hero-shade,
+.hero.homepage-banner .slide .hero-shade {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(6,20,14,0.72) 0%, rgba(6,20,14,0.32) 48%, rgba(6,20,14,0.08) 100%);
+  pointer-events: none;
+}
+.hero.page-hero .hero-content,
+.hero.homepage-banner .slide .hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(var(--content-width), calc(100% - 80px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 40px 0;
+  background: none;
+  color: var(--ivory);
+  pointer-events: none;
+}
+.hero.page-hero .hero-content > *,
+.hero.homepage-banner .slide .hero-content > * {
+  max-width: 620px;
+}
+.hero.page-hero .hero-content .btn-row,
+.hero.homepage-banner .slide .hero-content .btn-row {
+  pointer-events: auto;
+  margin-top: 24px;
+}
+.hero.page-hero h1,
+.hero.homepage-banner .slide h1,
+.hero.homepage-banner .slide h2 {
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
+  max-width: 16ch;
+  color: #fff;
+}
+.hero.page-hero .lede,
+.hero.homepage-banner .slide .lede {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+  color: rgba(246,240,228,0.9);
+  max-width: 36rem;
+}
+.hero.page-hero .kicker,
+.hero.homepage-banner .slide .kicker {
+  color: var(--gold-soft);
+}
+.hero.page-hero .scroll-discover,
+.hero.homepage-banner > .scroll-discover {
+  display: none;
+}
+.hero.products-campaign .hero-content {
+  pointer-events: none;
+}
+.hero.products-campaign .hero-content {
+  justify-content: flex-end;
+  padding-bottom: 48px;
+}
+.hero.products-campaign .hero-content h1 {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+  white-space: normal;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
+.hero.homepage-banner .slide-campaign .hero-shade {
+  background: linear-gradient(180deg, transparent 45%, rgba(6,20,14,0.5) 100%);
+}
+@media (max-width: 1024px) {
+  .hero.page-hero,
+  .hero.homepage-banner {
+    height: 480px;
+    min-height: 430px;
+    max-height: 520px;
+  }
+}
+@media (max-width: 720px) {
+  .hero.page-hero,
+  .hero.homepage-banner {
+    height: 400px;
+    min-height: 360px;
+    max-height: 440px;
+  }
+  .hero.page-hero .hero-content,
+  .hero.homepage-banner .slide .hero-content {
+    width: calc(100% - 32px);
+    padding: 24px 0 72px;
+    justify-content: flex-end;
+  }
+  .hero.page-hero h1,
+  .hero.homepage-banner .slide h1,
+  .hero.homepage-banner .slide h2 {
+    font-size: clamp(1.7rem, 7vw, 2.1rem);
+  }
+  .hero.page-hero .lede,
+  .hero.homepage-banner .slide .lede {
+    font-size: 0.95rem;
+  }
+  .hero.page-hero .hero-shade,
+  .hero.homepage-banner .slide .hero-shade {
+    background: linear-gradient(180deg, rgba(6,20,14,0.28) 0%, rgba(6,20,14,0.78) 100%);
+  }
+  .hero.homepage-banner .hero-slides {
+    height: 100%;
+  }
+  .hero.products-campaign .hero-media {
+    height: 100%;
+  }
 }
