@@ -21,7 +21,7 @@
   --line: rgba(198, 166, 107, 0.28);
   --shadow: 0 30px 80px rgba(6, 20, 14, 0.28);
   --radius: 10px;
-  --header-h: 64px;
+  --header-h: 56px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --serif: "Playfair Display", "Times New Roman", Georgia, serif;
@@ -224,7 +224,7 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   gap: 12px;
   color: var(--gold-soft);
 }
-.brand img { width: 36px; height: 36px; }
+.brand img { width: 32px; height: 32px; }
 .brand-lockup { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-org {
   font-family: var(--sans);
@@ -276,16 +276,16 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   align-items: center;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  gap: 16px 20px;
+  gap: 12px 16px;
 }
 .nav a {
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: none;
   font-weight: 600;
   color: rgba(246, 240, 228, 0.86);
   position: relative;
-  padding: 8px 0;
+  padding: 6px 0;
 }
 .nav a::after {
   content: "";
@@ -385,12 +385,12 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  padding: 0 16px;
+  height: 36px;
+  padding: 0 14px;
   background: var(--ivory);
   color: var(--forest);
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
@@ -893,6 +893,10 @@ main {
   height: auto;
   overflow: hidden;
 }
+.products-campaign .hero-media {
+  position: relative;
+  width: 100%;
+}
 .products-campaign .hero-media img,
 .products-campaign .hero-media picture,
 .products-campaign .hero-media picture img {
@@ -900,7 +904,7 @@ main {
   object-position: center center;
   width: 100%;
   height: auto;
-  max-height: none;
+  max-height: calc(100svh - var(--header-h) - var(--safe-top));
 }
 .products-campaign .hero-shade { display: none; }
 .products-campaign .hero-content {
@@ -911,15 +915,31 @@ main {
   .hero.products-campaign {
     min-height: 0;
   }
+  .products-campaign .hero-media {
+    height: clamp(280px, 48vh, 400px);
+  }
   .products-campaign .hero-media img,
+  .products-campaign .hero-media picture,
   .products-campaign .hero-media picture img {
-    object-fit: contain;
-    object-position: center center;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
   }
 }
+.page-hero:not(.products-campaign) .hero-media {
+  height: min(42vh, 380px);
+  overflow: hidden;
+}
 .page-hero:not(.products-campaign) .hero-media img {
-  object-fit: contain;
-  object-position: center center;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
 }
 .visually-hidden {
   position: absolute;
@@ -2972,7 +2992,7 @@ textarea { min-height: 140px; resize: vertical; }
 
 /* ---------- Phone layout ---------- */
 @media (max-width: 720px) {
-  :root { --header-h: 56px; }
+  :root { --header-h: 52px; }
   html { background-attachment: scroll; }
   html, body { overflow-x: hidden; }
 
