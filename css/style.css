@@ -1897,6 +1897,24 @@ textarea { min-height: 140px; resize: vertical; }
   transform: none;
   filter: none;
 }
+.catalog-empty {
+  margin: 28px 0 8px;
+  padding: 22px 24px;
+  border: 1px dashed var(--line);
+  background: var(--ivory);
+  color: #3d4d44;
+}
+.catalog-empty[hidden] { display: none !important; }
+.catalog-empty button {
+  margin-left: 8px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--forest);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
 .chip {
   display: inline-flex;
   padding: 4px 10px;

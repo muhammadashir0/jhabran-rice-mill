@@ -119,6 +119,19 @@
     });
   }
 
+  const catalog = (window.SHRM && window.SHRM.catalog) || [];
+  document.querySelectorAll("select[name=\"product\"]").forEach((sel) => {
+    if (!catalog.length || sel.options.length > 4) return;
+    const keep = Array.from(sel.options);
+    catalog.forEach((p) => {
+      if ([...sel.options].some((o) => o.textContent === `${p.brand} ${p.name}` || o.textContent === p.name)) return;
+      const opt = document.createElement("option");
+      opt.value = `${p.brand} ${p.name}`;
+      opt.textContent = `${p.brand} · ${p.name}`;
+      sel.appendChild(opt);
+    });
+  });
+
   const form = document.querySelector("#enquire-form");
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -168,15 +181,27 @@
 
   const filters = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll("[data-filter]");
+  const empty = document.querySelector("[data-catalog-empty]");
   const applyFilter = (key) => {
-    filters.forEach((b) => b.classList.toggle("is-on", b.dataset.key === key));
+    filters.forEach((b) => {
+      const on = b.dataset.key === key;
+      b.classList.toggle("is-on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    let shown = 0;
     cards.forEach((card) => {
       const hay = (card.dataset.filter || "").toLowerCase();
-      card.hidden = !(key === "all" || hay.includes(key));
+      const vis = key === "all" || hay.includes(key);
+      card.hidden = !vis;
+      if (vis) shown += 1;
     });
+    if (empty) empty.hidden = shown > 0;
   };
   filters.forEach((btn) => {
     btn.addEventListener("click", () => applyFilter(btn.dataset.key));
+  });
+  document.querySelectorAll("[data-filter-reset]").forEach((btn) => {
+    btn.addEventListener("click", () => applyFilter("all"));
   });
   document.querySelectorAll("[data-filter-jump]").forEach((el) => {
     el.addEventListener("click", (e) => {

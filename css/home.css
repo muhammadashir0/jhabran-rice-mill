@@ -64,7 +64,7 @@
 .lp-split p { color: #3d4d44; margin: 0 0 12px; }
 .brand-trio {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
 .brand-card h3 { margin: 18px 0 10px; }
@@ -427,9 +427,9 @@
   .kr-about-grid,
   .kr-pillars-grid,
   .kr-fields,
-  .brand-trio,
   .lp-legacy-grid,
   .lp-split { grid-template-columns: 1fr; }
+  .brand-trio { grid-template-columns: 1fr 1fr; }
   .tl-item-h { flex-basis: 70%; }
   .kr-about-media { max-width: 420px; }
   .vm-grid,
@@ -451,6 +451,7 @@
     max-width: 14ch;
   }
   .home .hero-center .lede { font-size: 0.95rem; }
+  .brand-trio { grid-template-columns: 1fr; }
   .brand-card p { min-height: 0; }
   .lp-foot { grid-template-columns: 1fr 1fr; }
   .home .hero-center .urdu { margin-left: 0; margin-right: 0; }
