@@ -1583,6 +1583,27 @@ textarea { min-height: 140px; resize: vertical; }
   overflow: hidden;
   aspect-ratio: 4 / 5;
 }
+.compare-wrap { overflow-x: auto; margin-top: 24px; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.compare-table th,
+.compare-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(18,50,38,0.12);
+  white-space: nowrap;
+}
+.compare-table th {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.compare-table a { color: var(--forest); font-weight: 600; }
 .spec-table {
   width: 100%;
   border-collapse: collapse;

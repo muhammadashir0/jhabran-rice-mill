@@ -149,6 +149,7 @@
       `Email: ${data.email || ""}`,
       `Phone: ${data.phone || ""}`,
       `Country / destination: ${data.country || ""}`,
+      `Buyer type: ${data.buyer || ""}`,
       `Product: ${data.product || data.variety || ""}`,
       `Processing: ${data.process || ""}`,
       `Packaging: ${data.packaging || ""}`,
