@@ -990,6 +990,75 @@ body.home .site-header.scrolled {
   color: #6a736c;
   font-weight: 400;
 }
+.ld-sign {
+  margin: 8px 0 22px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--forest);
+}
+.ld-card img {
+  transition: transform 0.5s ease;
+}
+.ld-card:hover img { transform: scale(1.03); }
+@media (min-width: 1100px) {
+  .ld-plate .name { font-size: 25px; }
+  .ld-portrait { padding-right: 16%; }
+}
+
+.ld-vision {
+  background: #fff;
+  padding: 80px 0;
+}
+.ld-vision-inner {
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px 64px;
+  align-items: start;
+}
+.ld-vision .title-small {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-deep);
+}
+.ld-vision h2 {
+  font-weight: 400;
+  margin: 12px 0 22px;
+  max-width: 14ch;
+  color: var(--forest);
+}
+.ld-vision p { color: #3d4d44; max-width: 58ch; }
+.ld-years {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+.ld-years div {
+  min-width: 140px;
+}
+.ld-years b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1.1;
+}
+.ld-years span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-deep);
+}
 
 .ld-heritage {
   background: #fff9f0;
@@ -1061,6 +1130,7 @@ body.home .site-header.scrolled {
 @media (max-width: 980px) {
   .ld-keynote-row { grid-template-columns: 1fr; max-width: 100%; gap: 36px; }
   .ld-portrait { padding-right: 0; }
+  .ld-vision-inner { grid-template-columns: 1fr; gap: 28px; }
   .ld-banner-media { aspect-ratio: 4 / 5; min-height: 360px; }
   .ld-scroll { display: none; }
   .ld-brands { grid-template-columns: 1fr; }
