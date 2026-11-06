@@ -1445,6 +1445,23 @@ body.home .site-header.scrolled {
   text-transform: uppercase;
   color: #5b6b62;
 }
+.mill-crest {
+  background: #0b2418;
+  padding: 36px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+.mill-crest img {
+  width: min(100%, 440px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  object-fit: contain !important;
+}
+.brand-identity-band .mill-crest img {
+  width: min(100%, 360px) !important;
+}
 
 .ed-brands { background: #fff; padding: 88px 0 64px; }
 .ed-brand-feature {
