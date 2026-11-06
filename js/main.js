@@ -213,6 +213,13 @@
       document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
+  const filterParam = new URLSearchParams(location.search).get("filter");
+  if (filterParam && filters.length) {
+    applyFilter(filterParam.toLowerCase());
+    if (location.hash === "#catalog") {
+      document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
   const lb = document.createElement("div");
   lb.className = "lightbox";
