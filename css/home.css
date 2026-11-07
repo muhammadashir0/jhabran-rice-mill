@@ -653,6 +653,12 @@ body.home .site-header.scrolled {
     object-fit: cover;
     object-position: center 22%;
   }
+  /* Heritage campaign: portrait restack — show person, type and packs, never stretch */
+  .home .hero-slides .slide.slide-heritage img,
+  .home .hero-slides .slide.slide-heritage picture img {
+    object-fit: cover;
+    object-position: center 46%;
+  }
   .home .slide-campaign .hero-content.hero-center {
     align-items: flex-start;
     justify-content: flex-end;
