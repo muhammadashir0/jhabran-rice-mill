@@ -403,6 +403,28 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   transform: translate(-50%, 0);
   pointer-events: auto;
 }
+.nav-mega {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+  min-width: 340px;
+  padding: 16px 8px 16px 4px;
+  left: 0;
+  transform: translate(0, 8px);
+}
+.nav-item.has-sub.mega:hover .nav-mega,
+.nav-item.has-sub.mega:focus-within .nav-mega,
+.nav-item.has-sub.mega.open .nav-mega {
+  transform: translate(0, 0);
+}
+.mega-label {
+  margin: 0 18px 6px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.nav-mega .mega-col a { padding: 8px 18px; }
 
 .header-cta {
   display: inline-flex;
@@ -1798,6 +1820,11 @@ textarea { min-height: 140px; resize: vertical; }
   .nav-item.has-sub.open .nav-toggle::after {
     transform: rotate(225deg);
     margin-top: 3px;
+  }
+  .nav-mega {
+    grid-template-columns: 1fr;
+    min-width: 0;
+    padding: 4px 0 10px;
   }
   .nav-sub {
     position: static;
@@ -3626,3 +3653,8 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
     height: 100%;
   }
 }
+
+.pair-grid { margin-top: 22px; }
+.pair-card { margin: 0; }
+.pair-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 4px; }
+.pair-card figcaption { margin-top: 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6b62; }
