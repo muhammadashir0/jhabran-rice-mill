@@ -4,61 +4,61 @@
     "steam-1121": {
       brand: "Ziyarat", name: "Kainat Steam Rice 1121", urdu: "عمدہ خوشبودار چاول",
       variety: "1121 Kainat extra-long", process: "Steam", weight: "25 kg",
-      color: "#145c32", accent: "#c6a15b", cut: "assets/products/cut/studio-steam-1121.png",
+      color: "#145c32", accent: "#c6a15b", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Kainat Steam Rice 1121"
     },
     "sella-1121": {
       brand: "Ziyarat", name: "Kainat Sella Rice 1121", urdu: "عمدہ پکائی کے لیے بہترین خوشبودار چاول",
       variety: "1121 Kainat extra-long", process: "Sella", weight: "25 kg",
-      color: "#6b1d68", accent: "#e8d5a3", cut: "assets/products/cut/studio-sella-1121.png",
+      color: "#6b1d68", accent: "#e8d5a3", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Kainat Sella Rice 1121"
     },
     "classic-sella": {
       brand: "Ziyarat", name: "Classic Kainat Basmati Sella", urdu: "کائینات باسمتی سیلہ رائس",
       variety: "Kainat basmati", process: "Sella", weight: "25 kg",
-      color: "#b8942a", accent: "#1a1408", cut: "assets/products/cut/studio-classic-sella.png",
+      color: "#b8942a", accent: "#1a1408", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Classic Kainat Basmati Sella"
     },
     "classic-steam": {
       brand: "Ziyarat", name: "Classic Kainat Basmati Steam", urdu: "کائینات باسمتی سٹیم رائس",
       variety: "Kainat basmati", process: "Steam", weight: "25 kg",
-      color: "#d8d2c6", accent: "#1a1408", cut: "assets/products/cut/studio-classic-steam.png",
+      color: "#d8d2c6", accent: "#1a1408", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Classic Kainat Basmati Steam"
     },
     "basmati": {
       brand: "Ziyarat", name: "Ziyarat Basmati Rice", urdu: "باسمتی رائس",
       variety: "Basmati", process: "Steam", weight: "25 kg",
-      color: "#c45c1a", accent: "#e8d5a3", cut: "assets/products/cut/studio-basmati.png",
+      color: "#c45c1a", accent: "#e8d5a3", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Basmati Rice"
     },
     "short-grain": {
       brand: "Ziyarat", name: "Ziyarat Short Grain", urdu: "شارٹ گرین",
       variety: "Short grain", process: "Steam", weight: "25 kg",
-      color: "#c9a227", accent: "#1a1408", cut: "assets/products/cut/studio-short.png",
+      color: "#c9a227", accent: "#1a1408", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Short Grain"
     },
     "b1": {
       brand: "Ziyarat", name: "Ziyarat B-1 Broken", urdu: "ادھواڑ B-1",
       variety: "B-1 broken", process: "Broken", weight: "25 kg",
-      color: "#1a4f9c", accent: "#e8d5a3", cut: "assets/products/cut/studio-b1.png",
+      color: "#1a4f9c", accent: "#e8d5a3", cut: "assets/products/blank.jpg",
       waName: "Ziyarat B-1 Broken"
     },
     "awami": {
       brand: "Ziyarat", name: "Basmati Awami Rice", urdu: "باسمتی عوامی رائس",
       variety: "Basmati Awami", process: "Steam", weight: "25 kg",
-      color: "#7a1c24", accent: "#e8d5a3", cut: "assets/products/cut/studio-awami.png",
+      color: "#7a1c24", accent: "#e8d5a3", cut: "assets/products/blank.jpg",
       waName: "Ziyarat Basmati Awami Rice"
     },
     "sultan-sella": {
       brand: "Sultan", name: "Sultan Kainat Basmati Sella", urdu: "سلطان کائینات باسمتی سیلہ رائس",
       variety: "Kainat basmati", process: "Sella", weight: "25 kg",
-      color: "#c6a15b", accent: "#7a1f1f", cut: "assets/products/cut/studio-sultan-sella.png",
+      color: "#c6a15b", accent: "#7a1f1f", cut: "assets/products/blank.jpg",
       waName: "Sultan Kainat Basmati Sella"
     },
     "sultan-short": {
       brand: "Sultan", name: "Sultan Short Grain", urdu: "سلطان شارٹ گرین",
       variety: "Short grain", process: "Steam", weight: "25 kg",
-      color: "#12243a", accent: "#c6a15b", cut: "assets/products/cut/studio-sultan-short.png",
+      color: "#12243a", accent: "#c6a15b", cut: "assets/products/blank.jpg",
       waName: "Sultan Short Grain"
     }    ,
     "wazir-sella": {
