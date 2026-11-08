@@ -675,24 +675,39 @@ body.home .site-header.scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 22%;
+    object-position: center center;
   }
-  /* Heritage campaign: portrait restack — show person, type and packs, never stretch */
+  .home .homepage-banner .hero-slides .slide.slide-range img,
+  .home .homepage-banner .hero-slides .slide.slide-range picture img,
+  .home .homepage-banner .hero-slides .slide.slide-gold img,
+  .home .homepage-banner .hero-slides .slide.slide-gold picture img,
+  .home .homepage-banner .hero-slides .slide.slide-regional img,
+  .home .homepage-banner .hero-slides .slide.slide-regional picture img {
+    object-fit: cover;
+    object-position: center center;
+  }
   .home .hero-slides .slide.slide-heritage img,
   .home .hero-slides .slide.slide-heritage picture img {
     object-fit: cover;
     object-position: center 46%;
   }
   .home .slide-campaign .hero-content.hero-center {
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-end;
-    padding: 16px 0 20px;
+    padding: 12px 0 56px;
     background: none;
   }
   .home .slide-campaign .hero-actions {
-    align-self: flex-start;
-    justify-content: flex-start;
+    align-self: stretch;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+  .home .slide-campaign .hero-actions .btn {
+    font-size: 13px;
+    min-height: 42px;
+    padding: 10px 14px;
   }
 }
 

@@ -3641,12 +3641,17 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   }
 }
 @media (max-width: 720px) {
-  .hero.page-hero,
-  .hero.homepage-banner {
+  .hero.page-hero {
     aspect-ratio: auto;
-    height: 400px;
-    min-height: 360px;
-    max-height: 440px;
+    height: 280px;
+    min-height: 240px;
+    max-height: 320px;
+  }
+  .hero.homepage-banner {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    min-height: 0;
+    max-height: min(78svh, 640px);
   }
   .hero.page-hero .hero-content,
   .hero.homepage-banner .slide .hero-content {
