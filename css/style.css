@@ -3499,7 +3499,8 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   aspect-ratio: 1920 / 778;
 }
 .hero.homepage-banner .slide-range .hero-shade,
-.hero.homepage-banner .slide-gold .hero-shade {
+.hero.homepage-banner .slide-gold .hero-shade,
+.hero.homepage-banner .slide-regional .hero-shade {
   background: none;
 }
 .hero.page-hero .hero-media,
@@ -3530,7 +3531,9 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 .hero.homepage-banner .slide-range img,
 .hero.homepage-banner .slide-range picture img,
 .hero.homepage-banner .slide-gold img,
-.hero.homepage-banner .slide-gold picture img {
+.hero.homepage-banner .slide-gold picture img,
+.hero.homepage-banner .slide-regional img,
+.hero.homepage-banner .slide-regional picture img {
   object-fit: contain;
   object-position: center center;
 }
@@ -3620,7 +3623,8 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   background: linear-gradient(180deg, transparent 45%, rgba(6,20,14,0.5) 100%);
 }
 .hero.homepage-banner .slide-range .hero-shade,
-.hero.homepage-banner .slide-gold .hero-shade {
+.hero.homepage-banner .slide-gold .hero-shade,
+.hero.homepage-banner .slide-regional .hero-shade {
   background: none;
 }
 @media (max-width: 1024px) {

@@ -627,6 +627,15 @@ body.home .site-header.scrolled {
   object-fit: contain;
   object-position: center center;
 }
+.home .hero-slides .slide.slide-regional {
+  background: #e4dcc8;
+}
+.home .hero-slides .slide.slide-regional img,
+.home .homepage-banner .hero-slides .slide.slide-regional img,
+.home .homepage-banner .hero-slides .slide.slide-regional picture img {
+  object-fit: contain;
+  object-position: center center;
+}
 @media (min-width: 721px) {
   .home .homepage-banner .hero-slides {
     position: absolute;
