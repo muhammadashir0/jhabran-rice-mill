@@ -3496,7 +3496,10 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 }
 .hero.homepage-banner,
 .hero.products-campaign {
-  aspect-ratio: 1920 / 900;
+  aspect-ratio: 1920 / 778;
+}
+.hero.homepage-banner .slide-range .hero-shade {
+  background: none;
 }
 .hero.page-hero .hero-media,
 .hero.homepage-banner .hero-slides,
@@ -3522,6 +3525,11 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   object-position: center center;
   margin: 0;
   max-height: none;
+}
+.hero.homepage-banner .slide-range img,
+.hero.homepage-banner .slide-range picture img {
+  object-fit: contain;
+  object-position: center center;
 }
 .hero.page-hero .hero-shade,
 .hero.homepage-banner .slide .hero-shade {
@@ -3608,6 +3616,9 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 .hero.homepage-banner .slide-campaign .hero-shade {
   background: linear-gradient(180deg, transparent 45%, rgba(6,20,14,0.5) 100%);
 }
+.hero.homepage-banner .slide-range .hero-shade {
+  background: none;
+}
 @media (max-width: 1024px) {
   .hero.page-hero:not(.homepage-banner):not(.products-campaign) {
     aspect-ratio: 1920 / 560;
@@ -3615,7 +3626,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   }
   .hero.homepage-banner,
   .hero.products-campaign {
-    aspect-ratio: 1920 / 900;
+    aspect-ratio: 1920 / 778;
     height: auto;
   }
 }
