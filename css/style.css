@@ -3492,11 +3492,12 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   height: auto;
   min-height: 0;
   max-height: none;
-  aspect-ratio: 1920 / 1080;
+  aspect-ratio: 1920 / 560;
 }
 .hero.homepage-banner,
 .hero.products-campaign {
-  aspect-ratio: 1920 / 1080;
+  aspect-ratio: 1920 / 778;
+  max-height: calc(100svh - var(--header-h));
 }
 .hero.homepage-banner .slide-range .hero-shade,
 .hero.homepage-banner .slide-gold .hero-shade,
@@ -3629,22 +3630,23 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 }
 @media (max-width: 1024px) {
   .hero.page-hero:not(.homepage-banner):not(.products-campaign) {
-    aspect-ratio: 1920 / 1080;
+    aspect-ratio: 1920 / 560;
     height: auto;
   }
   .hero.homepage-banner,
   .hero.products-campaign {
-    aspect-ratio: 1920 / 1080;
+    aspect-ratio: 1920 / 778;
     height: auto;
+    max-height: calc(100svh - var(--header-h));
   }
 }
 @media (max-width: 720px) {
   .hero.page-hero,
   .hero.homepage-banner {
-    aspect-ratio: 1920 / 1080;
-    height: auto;
-    min-height: 0;
-    max-height: none;
+    aspect-ratio: auto;
+    height: 400px;
+    min-height: 360px;
+    max-height: 440px;
   }
   .hero.page-hero .hero-content,
   .hero.homepage-banner .slide .hero-content {
