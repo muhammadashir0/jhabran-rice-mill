@@ -674,7 +674,7 @@ body.home .site-header.scrolled {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
   }
   .home .homepage-banner .hero-slides .slide.slide-range img,
@@ -683,7 +683,7 @@ body.home .site-header.scrolled {
   .home .homepage-banner .hero-slides .slide.slide-gold picture img,
   .home .homepage-banner .hero-slides .slide.slide-regional img,
   .home .homepage-banner .hero-slides .slide.slide-regional picture img {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
   }
   .home .hero-slides .slide.slide-heritage img,
@@ -692,22 +692,7 @@ body.home .site-header.scrolled {
     object-position: center 46%;
   }
   .home .slide-campaign .hero-content.hero-center {
-    align-items: stretch;
-    justify-content: flex-end;
-    padding: 12px 0 56px;
-    background: none;
-  }
-  .home .slide-campaign .hero-actions {
-    align-self: stretch;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: 100%;
-  }
-  .home .slide-campaign .hero-actions .btn {
-    font-size: 13px;
-    min-height: 42px;
-    padding: 10px 14px;
+    display: none;
   }
 }
 

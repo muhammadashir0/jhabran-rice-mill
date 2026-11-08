@@ -3648,16 +3648,24 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
     max-height: 320px;
   }
   .hero.homepage-banner {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1920 / 778;
     height: auto;
     min-height: 0;
-    max-height: min(78svh, 640px);
+    max-height: none;
   }
   .hero.page-hero .hero-content,
   .hero.homepage-banner .slide .hero-content {
     width: calc(100% - 32px);
     padding: 24px 0 72px;
     justify-content: flex-end;
+  }
+  .hero.homepage-banner .slide-campaign .hero-content {
+    padding: 0;
+  }
+  .hero.homepage-banner .slide-range .hero-shade,
+  .hero.homepage-banner .slide-gold .hero-shade,
+  .hero.homepage-banner .slide-regional .hero-shade {
+    background: none;
   }
   .hero.page-hero h1,
   .hero.homepage-banner .slide h1,
