@@ -609,22 +609,22 @@ body.home .site-header.scrolled {
   transform: none;
 }
 .home .hero-slides .slide.slide-campaign img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-range img,
 .home .homepage-banner .hero-slides .slide.slide-range img,
 .home .homepage-banner .hero-slides .slide.slide-range picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-gold {
-  background: #e0a838;
+  background: #d9b544;
 }
 .home .hero-slides .slide.slide-gold img,
 .home .homepage-banner .hero-slides .slide.slide-gold img,
 .home .homepage-banner .hero-slides .slide.slide-gold picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-regional {
@@ -633,7 +633,7 @@ body.home .site-header.scrolled {
 .home .hero-slides .slide.slide-regional img,
 .home .homepage-banner .hero-slides .slide.slide-regional img,
 .home .homepage-banner .hero-slides .slide.slide-regional picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 @media (min-width: 721px) {

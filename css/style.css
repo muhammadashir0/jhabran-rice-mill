@@ -3492,11 +3492,11 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   height: auto;
   min-height: 0;
   max-height: none;
-  aspect-ratio: 1920 / 560;
+  aspect-ratio: 1920 / 1080;
 }
 .hero.homepage-banner,
 .hero.products-campaign {
-  aspect-ratio: 1920 / 778;
+  aspect-ratio: 1920 / 1080;
 }
 .hero.homepage-banner .slide-range .hero-shade,
 .hero.homepage-banner .slide-gold .hero-shade,
@@ -3534,7 +3534,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 .hero.homepage-banner .slide-gold picture img,
 .hero.homepage-banner .slide-regional img,
 .hero.homepage-banner .slide-regional picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .hero.page-hero .hero-shade,
@@ -3629,22 +3629,22 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 }
 @media (max-width: 1024px) {
   .hero.page-hero:not(.homepage-banner):not(.products-campaign) {
-    aspect-ratio: 1920 / 560;
+    aspect-ratio: 1920 / 1080;
     height: auto;
   }
   .hero.homepage-banner,
   .hero.products-campaign {
-    aspect-ratio: 1920 / 778;
+    aspect-ratio: 1920 / 1080;
     height: auto;
   }
 }
 @media (max-width: 720px) {
   .hero.page-hero,
   .hero.homepage-banner {
-    aspect-ratio: auto;
-    height: 400px;
-    min-height: 360px;
-    max-height: 440px;
+    aspect-ratio: 1920 / 1080;
+    height: auto;
+    min-height: 0;
+    max-height: none;
   }
   .hero.page-hero .hero-content,
   .hero.homepage-banner .slide .hero-content {
