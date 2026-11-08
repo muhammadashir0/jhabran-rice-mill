@@ -609,13 +609,16 @@ body.home .site-header.scrolled {
   transform: none;
 }
 .home .hero-slides .slide.slide-campaign img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
+}
+.home .hero-slides .slide.slide-range {
+  background: #e4e0d2;
 }
 .home .hero-slides .slide.slide-range img,
 .home .homepage-banner .hero-slides .slide.slide-range img,
 .home .homepage-banner .hero-slides .slide.slide-range picture img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-gold {
@@ -624,16 +627,16 @@ body.home .site-header.scrolled {
 .home .hero-slides .slide.slide-gold img,
 .home .homepage-banner .hero-slides .slide.slide-gold img,
 .home .homepage-banner .hero-slides .slide.slide-gold picture img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-regional {
-  background: #e4dcc8;
+  background: #e8e2d4;
 }
 .home .hero-slides .slide.slide-regional img,
 .home .homepage-banner .hero-slides .slide.slide-regional img,
 .home .homepage-banner .hero-slides .slide.slide-regional picture img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 @media (min-width: 721px) {
@@ -654,8 +657,8 @@ body.home .site-header.scrolled {
     width: 100%;
     height: 100%;
     max-height: none;
-    object-fit: cover;
-    object-position: center 40%;
+    object-fit: contain;
+    object-position: center center;
   }
 }
 @media (max-width: 720px) {

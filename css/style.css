@@ -3496,7 +3496,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 }
 .hero.homepage-banner,
 .hero.products-campaign {
-  aspect-ratio: 1920 / 778;
+  aspect-ratio: 16 / 9;
   max-height: calc(100svh - var(--header-h));
 }
 .hero.homepage-banner .slide-range .hero-shade,
@@ -3535,7 +3535,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 .hero.homepage-banner .slide-gold picture img,
 .hero.homepage-banner .slide-regional img,
 .hero.homepage-banner .slide-regional picture img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 .hero.page-hero .hero-shade,
@@ -3635,7 +3635,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   }
   .hero.homepage-banner,
   .hero.products-campaign {
-    aspect-ratio: 1920 / 778;
+    aspect-ratio: 16 / 9;
     height: auto;
     max-height: calc(100svh - var(--header-h));
   }
@@ -3648,7 +3648,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
     max-height: 320px;
   }
   .hero.homepage-banner {
-    aspect-ratio: 1920 / 778;
+    aspect-ratio: 16 / 9;
     height: auto;
     min-height: 0;
     max-height: none;
