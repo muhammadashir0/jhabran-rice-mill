@@ -3492,14 +3492,15 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   height: auto;
   min-height: 0;
   max-height: none;
-  aspect-ratio: 1920 / 560;
+  aspect-ratio: auto;
 }
 .hero.homepage-banner,
 .hero.products-campaign {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
   width: 100%;
   height: auto;
   max-height: none;
+  min-height: 0;
 }
 .hero.homepage-banner .slide-range .hero-shade,
 .hero.homepage-banner .slide-gold .hero-shade,
@@ -3632,12 +3633,12 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 }
 @media (max-width: 1024px) {
   .hero.page-hero:not(.homepage-banner):not(.products-campaign) {
-    aspect-ratio: 1920 / 560;
+    aspect-ratio: auto;
     height: auto;
   }
   .hero.homepage-banner,
   .hero.products-campaign {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
     height: auto;
     max-height: none;
   }
@@ -3645,12 +3646,12 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 @media (max-width: 720px) {
   .hero.page-hero {
     aspect-ratio: auto;
-    height: 280px;
-    min-height: 240px;
-    max-height: 320px;
+    height: auto;
+    min-height: 0;
+    max-height: none;
   }
   .hero.homepage-banner {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
     height: auto;
     min-height: 0;
     max-height: none;
@@ -3688,6 +3689,50 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   .hero.products-campaign .hero-media {
     height: 100%;
   }
+}
+
+/* KRBL-style: image intrinsic size drives height (1920×900 / 480×809) */
+.hero.homepage-banner .hero-slides,
+.hero.homepage-banner .hero-slides .slide.is-on,
+.hero.page-hero .hero-media,
+.hero.page-hero .hero-media picture {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+.hero.homepage-banner .hero-slides .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.hero.homepage-banner .hero-slides .slide.is-on {
+  position: relative !important;
+  inset: auto !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+.hero.homepage-banner .hero-slides .slide picture,
+.hero.homepage-banner .hero-slides .slide img,
+.hero.homepage-banner .hero-slides .slide picture img,
+.hero.page-hero .hero-media img,
+.hero.page-hero .hero-media picture img {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: unset !important;
+  object-position: center center !important;
+  display: block;
+}
+.hero.homepage-banner .slide .hero-content,
+.hero.page-hero .hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 .pair-grid { margin-top: 22px; }
