@@ -1684,20 +1684,24 @@ body.home .site-header.scrolled {
   color: var(--forest);
 }
 .home-about-media {
-  width: min(280px, 100%);
+  width: min(260px, 64vw);
+  aspect-ratio: 1 / 1;
   margin: 0 auto;
-  aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid var(--gold);
-  padding: 14px;
+  padding: 18%;
   overflow: hidden;
-  background: #f5e9d6;
+  background: #fff;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
 }
 .home-about-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
   display: block;
 }
 .home-about-copy h3 {
@@ -1858,7 +1862,11 @@ body.home .site-header.scrolled {
 }
 @media (max-width: 720px) {
   .home-about { padding: 52px 0 40px; }
-  .home-about-media { width: min(220px, 70vw); }
+  .home-about-media {
+    width: min(200px, 58vw);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .home-about-timeline {
     padding: 0 12px 0;
   }
@@ -1902,10 +1910,17 @@ body.home .site-header.scrolled {
 @media (max-width: 980px) {
   .home .homepage-banner .hero-arrow {
     display: grid !important;
-    width: 40px;
-    height: 40px;
-    margin-top: -20px;
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+    background: rgba(11, 36, 28, 0.42);
   }
-  .home .homepage-banner .hero-arrow.prev { left: 10px; }
-  .home .homepage-banner .hero-arrow.next { right: 10px; }
+  .home .homepage-banner .hero-arrow.prev { left: 8px; }
+  .home .homepage-banner .hero-arrow.next { right: 8px; }
+  .home .homepage-banner .hero-arrow.prev::before { margin-left: 11px; }
+  .home .homepage-banner .hero-arrow.next::before { margin-left: 9px; }
+}
+@media (max-width: 768px) {
+  /* Range art already carries the packs — overlay labels sit on the bags. */
+  .home .slide-range .hero-actions { display: none !important; }
 }
