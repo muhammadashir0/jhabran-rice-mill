@@ -600,6 +600,11 @@ body.home .site-header.scrolled {
   align-self: center;
   justify-content: center;
 }
+/* Photopea slides already carry the message — overlay CTAs sit on packs. */
+.home .slide-gold .hero-actions,
+.home .slide-regional .hero-actions {
+  display: none;
+}
 .home .hero-slides .slide.slide-campaign {
   background: #f4efe6;
 }
@@ -1893,4 +1898,16 @@ body.home .site-header.scrolled {
   }
   .home-about.is-tl-open .home-about-timeline::after,
   .home-about.is-tl-open .tl-dot { display: none; }
+}
+
+/* Keep banner arrows on phone/tablet — pager stays off the artwork. */
+@media (max-width: 980px) {
+  .home .homepage-banner .hero-arrow {
+    display: grid !important;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+  }
+  .home .homepage-banner .hero-arrow.prev { left: 10px; }
+  .home .homepage-banner .hero-arrow.next { right: 10px; }
 }
