@@ -1341,8 +1341,6 @@ body.home .site-header.scrolled {
 .lead-page .kr-join { text-align: left; }
 .lead-page .kr-join .lp-contact { margin: 0; max-width: 44rem; }
 .lead-page .kr-join .btn-row { justify-content: flex-start; }
-.lead-page #philosophy { background: #f6f0e4; }
-.lead-page #ahead { background: #fff; }
 @media (max-width: 980px) {
   .lead-principles { grid-template-columns: 1fr; }
   .lead-close { padding: 56px 0; }
