@@ -1626,6 +1626,40 @@ body.home .site-header.scrolled {
   to { opacity: 1; transform: none; }
 }
 
+/* Full artwork banners — never cover/zoom, never pad the frame */
+.home .homepage-banner,
+.home .homepage-banner .hero-slides,
+.home .homepage-banner .hero-slides .slide.is-on,
+.page-hero,
+.page-hero .hero-media {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}
+.home .homepage-banner .hero-slides {
+  position: relative !important;
+  inset: auto !important;
+}
+.home .homepage-banner .hero-slides .slide.is-on {
+  position: relative !important;
+  inset: auto !important;
+}
+.home .homepage-banner .hero-slides .slide picture,
+.home .homepage-banner .hero-slides .slide img,
+.home .homepage-banner .hero-slides .slide picture img,
+.page-hero .hero-media picture,
+.page-hero .hero-media img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: unset !important;
+  object-position: center center !important;
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+}
+
 /* ---------- Homepage about (KRBL three-column + timeline) ---------- */
 .home-about {
   background: #f5e9d6;
