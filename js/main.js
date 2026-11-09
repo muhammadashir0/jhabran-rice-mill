@@ -445,14 +445,26 @@
   });
 
   if ("IntersectionObserver" in window) {
+    document.querySelectorAll("main > section").forEach((sec) => {
+      if (sec.matches(".hero, .hero-film, .homepage-banner")) return;
+      if (sec.hasAttribute("data-aos") || sec.querySelector(":scope > [data-aos], :scope > .wrap [data-aos]")) return;
+      const wrap = sec.querySelector(":scope > .wrap") || sec;
+      if (!wrap.hasAttribute("data-aos")) wrap.setAttribute("data-aos", "fade-up");
+    });
+    document.querySelectorAll("a.btn, button.btn").forEach((btn, idx) => {
+      if (btn.closest(".hero")) return;
+      if (btn.closest("[data-aos]")) return;
+      if (btn.hasAttribute("data-aos")) return;
+      btn.setAttribute("data-aos", "fade-up");
+      btn.style.transitionDelay = `${(idx % 4) * 80}ms`;
+    });
+
     const reveal = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add("is-in");
-        reveal.unobserve(e.target);
+        e.target.classList.toggle("is-in", e.isIntersecting);
       });
-    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
-    document.querySelectorAll(".note-card, .step, .figure, .range-tile, .line, .product-card, .stat-card, .lead-card, .hist-panel, .field-box").forEach((el, idx) => {
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".note-card, .step, .figure, .range-tile, .line, .product-card, .stat-card, .lead-card, .hist-panel, .field-box, .brand-card, .ed-brand-row").forEach((el, idx) => {
       if (el.closest(".hero")) return;
       el.classList.add("inview");
       el.style.transitionDelay = `${Math.min(idx % 6, 5) * 70}ms`;
@@ -460,18 +472,22 @@
     });
     document.querySelectorAll("[data-aos]").forEach((el, idx) => {
       if (el.closest(".hero")) return;
-      el.style.transitionDelay = `${Math.min(idx % 4, 3) * 120}ms`;
+      if (!el.style.transitionDelay) el.style.transitionDelay = `${Math.min(idx % 4, 3) * 120}ms`;
       reveal.observe(el);
     });
-    setTimeout(() => {
-      document.querySelectorAll("[data-aos]:not(.is-in), .inview:not(.is-in)").forEach((el) => {
+    const syncInView = () => {
+      document.querySelectorAll("[data-aos], .inview").forEach((el) => {
+        if (el.closest(".hero")) {
+          el.classList.add("is-in");
+          return;
+        }
         const r = el.getBoundingClientRect();
-        if (r.top < innerHeight * 0.92) el.classList.add("is-in");
+        const inView = r.bottom > 40 && r.top < innerHeight * 0.92;
+        el.classList.toggle("is-in", inView);
       });
-    }, 600);
-    setTimeout(() => {
-      document.querySelectorAll("[data-aos], .inview").forEach((el) => el.classList.add("is-in"));
-    }, 5000);
+    };
+    setTimeout(syncInView, 80);
+    setTimeout(syncInView, 500);
 
     const hist = document.querySelector("[data-hist]");
     if (hist) {
@@ -493,6 +509,14 @@
       };
       tl.querySelector("[data-tl-prev]")?.addEventListener("click", () => jump(-1));
       tl.querySelector("[data-tl-next]")?.addEventListener("click", () => jump(1));
+      const more = document.querySelector("[data-tl-more]");
+      const moreLabel = document.querySelector("[data-tl-more-label]");
+      const about = tl.closest(".home-about");
+      more?.addEventListener("click", () => {
+        const open = about?.classList.toggle("is-tl-open");
+        if (moreLabel) moreLabel.textContent = open ? "View Less" : "View More";
+        more.setAttribute("aria-expanded", open ? "true" : "false");
+      });
     }
 
     const countIo = new IntersectionObserver((entries) => {
@@ -514,7 +538,7 @@
     }, { threshold: 0.6 });
     document.querySelectorAll("[data-count]").forEach((b) => countIo.observe(b));
   } else {
-    document.querySelectorAll(".inview").forEach((el) => el.classList.add("is-in"));
+    document.querySelectorAll(".inview, [data-aos]").forEach((el) => el.classList.add("is-in"));
   }
 
   const tabBtns = document.querySelectorAll("[data-tab]");
