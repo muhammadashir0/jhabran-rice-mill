@@ -3362,12 +3362,14 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
   background: #f4efe4;
   border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: auto;
 }
 .pdp-shot img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
+  object-position: center;
 }
 .pack-design {
   border: 1px solid var(--line);
