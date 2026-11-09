@@ -7,12 +7,12 @@
   <title>Page not found | Saith Hanif Rice Mills</title>
   <meta name="description" content="That page is not on the Saith Hanif Rice Mills website. Return home or view rice products.">
   <meta name="robots" content="noindex">
-  <link rel="stylesheet" href="css/style.css?v=82">
-  <link rel="stylesheet" href="css/home.css?v=82">
+  <link rel="stylesheet" href="css/style.css?v=83">
+  <link rel="stylesheet" href="css/home.css?v=83">
 </head>
 <body class="home">
   <a class="skip" href="#content">Skip to content</a>
-  <header class="site-header solid">
+    <header class="site-header solid">
     <div class="inner">
       <a class="brand" href="index.html">
         <span class="brand-lockup">
@@ -20,7 +20,70 @@
           <span class="brand-org-sub">Rice Mills</span>
         </span>
       </a>
-      <a class="header-cta" href="contact.html">Trade enquiry</a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="navbar-list">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item has-sub">
+            <a class="nav-link" href="about.html">About us</a>
+            <button type="button" class="drop-icon" aria-expanded="false" aria-label="About us submenu"><svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="drop-wrap">
+              <ul class="drop-list">
+                <li><a href="about.html">About the mill</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item has-sub">
+            <a class="nav-link" href="products.html">Explore rice</a>
+            <button type="button" class="drop-icon" aria-expanded="false" aria-label="Explore rice submenu"><svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="drop-wrap drop-wide">
+              <ul class="drop-list">
+                <li class="drop-label">Brands</li>
+                <li><a href="ziyarat.html">Ziyarat</a></li>
+                <li><a href="sultan.html">Sultan</a></li>
+                <li><a href="wazir.html">Wazir</a></li>
+                <li class="drop-label">Rice collection</li>
+                <li><a href="products.html">All products</a></li>
+                <li><a href="products.html?filter=steam#catalog">Steam</a></li>
+                <li><a href="products.html?filter=sella#catalog">Sella</a></li>
+                <li><a href="products.html?filter=short#catalog">Short grain</a></li>
+                <li><a href="products.html?filter=broken#catalog">Broken</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="process.html">Our process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quality.html">Quality</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="export.html">Export</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <button type="button" class="searchbtn" aria-label="Search" data-search-open>
+          <svg width="15" height="16" viewBox="0 0 15 16" fill="none" aria-hidden="true"><path d="M6.778 13.056a5.778 5.778 0 1 0 0-11.556 5.778 5.778 0 0 0 0 11.556Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 14.5 10.857 11.358" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="header-cta" href="contact.html">Trade enquiry</a>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+    <div class="search-bg-layer" data-search-layer>
+      <button type="button" class="close-search" data-search-close>Close</button>
+    </div>
+    <div class="search-nav" data-search-panel role="dialog" aria-modal="true" aria-label="Search">
+      <form class="search-form" role="search" data-site-search action="products.html" method="get">
+        <input type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the mill site">
+        <button class="button-search" type="submit" aria-label="Submit search"><svg width="22" height="22" viewBox="0 0 25 25" fill="none" aria-hidden="true"><path d="M19.036 17.387 24.033 22.382 22.382 24.033 17.386 19.036A10.5 10.5 0 1 1 19.036 17.387Zm-2.34-.866A8.167 8.167 0 1 0 10.833 19a8.14 8.14 0 0 0 5.863-2.479Z" fill="currentColor"/></svg></button>
+      </form>
+      <div class="search-results" data-search-results></div>
     </div>
   </header>
   <main id="content" class="section" style="padding-top:140px">
@@ -81,5 +144,8 @@
       <span><a href="privacy.html">Privacy</a> · Ziyarat · Sultan · Wazir</span>
     </div>
   </footer>
+  <script src="js/company.js?v=2"></script>
+  <script src="js/catalog.js?v=35"></script>
+  <script src="js/main.js?v=44"></script>
 </body>
 </html>
