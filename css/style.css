@@ -227,8 +227,8 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   color: var(--gold-soft);
 }
 .brand img {
-  width: 72px;
-  height: 72px;
+  width: auto;
+  height: 52px;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
@@ -279,8 +279,8 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); }
   margin-top: 4px;
 }
 .site-footer .brand img {
-  width: 64px;
-  height: 64px;
+  width: auto;
+  height: 48px;
   object-fit: contain;
 }
 .site-footer .brand-org { font-size: 15px; }
@@ -1787,7 +1787,7 @@ textarea { min-height: 140px; resize: vertical; }
     font-size: 14px;
   }
   .site-header .brand-product { display: none; }
-  .brand img { width: 48px; height: 48px; object-fit: contain; }
+  .brand img { width: auto; height: 40px; object-fit: contain; }
   .menu-btn {
     display: grid;
     place-items: center;
