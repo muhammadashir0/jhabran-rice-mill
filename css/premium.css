@@ -319,3 +319,70 @@
   .explore-hero .copy h1 { font-size: 1.7rem; }
   .ig-pack-row { gap: 12px; }
 }
+
+
+/* Export hero — mill containers, ship, loading bay */
+.export-hero {
+  position: relative;
+  overflow: hidden;
+  background: #0B241C;
+}
+.export-slides {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 900;
+  background: #0B241C;
+}
+.export-slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: exportFade 28s infinite;
+}
+.export-slides img:nth-child(1) { opacity: 1; animation: none; }
+.export-slides img:nth-child(2) { animation-delay: 0s; }
+.export-slides img:nth-child(3) { animation-delay: 5.6s; }
+.export-slides img:nth-child(4) { animation-delay: 11.2s; }
+.export-slides img:nth-child(5) { animation-delay: 16.8s; }
+@keyframes exportFade {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.export-hero .shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(6,20,14,0.25) 0%, rgba(6,20,14,0.15) 40%, rgba(6,20,14,0.72) 100%);
+}
+.export-hero .copy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 0 48px;
+  color: #fff;
+  pointer-events: none;
+}
+.export-hero .copy .kicker { color: #e8d5a3; }
+.export-hero .copy h1 { color: #fff; max-width: 16ch; margin: 0 0 10px; }
+.export-hero .copy .lede { color: rgba(246,240,228,0.9); max-width: 46ch; }
+.export-hero .copy .btn-row { pointer-events: auto; }
+@media (max-width: 768px) {
+  .export-hero .copy { width: calc(100% - 32px); padding-bottom: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .export-slides img { animation: none; opacity: 0; }
+  .export-slides img:first-child { opacity: 1; }
+}
