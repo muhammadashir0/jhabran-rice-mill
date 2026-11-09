@@ -3535,7 +3535,7 @@ html.js .hero-content > *:nth-child(5) { animation-delay: 0.46s; }
 .hero.homepage-banner .slide-gold picture img,
 .hero.homepage-banner .slide-regional img,
 .hero.homepage-banner .slide-regional picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .hero.page-hero .hero-shade,

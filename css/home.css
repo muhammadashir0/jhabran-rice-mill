@@ -609,7 +609,7 @@ body.home .site-header.scrolled {
   transform: none;
 }
 .home .hero-slides .slide.slide-campaign img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-range {
@@ -618,7 +618,7 @@ body.home .site-header.scrolled {
 .home .hero-slides .slide.slide-range img,
 .home .homepage-banner .hero-slides .slide.slide-range img,
 .home .homepage-banner .hero-slides .slide.slide-range picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-gold {
@@ -627,7 +627,7 @@ body.home .site-header.scrolled {
 .home .hero-slides .slide.slide-gold img,
 .home .homepage-banner .hero-slides .slide.slide-gold img,
 .home .homepage-banner .hero-slides .slide.slide-gold picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-regional {
@@ -636,7 +636,7 @@ body.home .site-header.scrolled {
 .home .hero-slides .slide.slide-regional img,
 .home .homepage-banner .hero-slides .slide.slide-regional img,
 .home .homepage-banner .hero-slides .slide.slide-regional picture img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
 }
 @media (min-width: 721px) {
@@ -657,7 +657,7 @@ body.home .site-header.scrolled {
     width: 100%;
     height: 100%;
     max-height: none;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
 }
@@ -677,7 +677,7 @@ body.home .site-header.scrolled {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
   .home .homepage-banner .hero-slides .slide.slide-range img,
@@ -686,7 +686,7 @@ body.home .site-header.scrolled {
   .home .homepage-banner .hero-slides .slide.slide-gold picture img,
   .home .homepage-banner .hero-slides .slide.slide-regional img,
   .home .homepage-banner .hero-slides .slide.slide-regional picture img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
   .home .hero-slides .slide.slide-heritage img,
