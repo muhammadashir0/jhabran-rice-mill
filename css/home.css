@@ -1071,7 +1071,7 @@ body.home .site-header.scrolled {
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
-  background: #f4efe4;
+  background: #0c0c0d;
   display: block;
 }
 .ld-brands h3 {
@@ -1449,7 +1449,7 @@ body.home .site-header.scrolled {
 .ed-brand-pack {
   display: grid;
   place-items: center;
-  background: #f7f3e9;
+  background: #0c0c0d;
   min-height: 420px;
   padding: 28px;
 }
