@@ -48,77 +48,9 @@
     }
   });
 
-  const searchLayer = document.querySelector("[data-search-layer]");
-  const searchPanel = document.querySelector("[data-search-panel]");
-  const searchForm = document.querySelector("[data-site-search]");
-  const searchInput = searchForm?.querySelector("input");
-  const searchOut = document.querySelector("[data-search-results]");
-  const setSearch = (open) => {
-    searchLayer?.classList.toggle("show", open);
-    searchPanel?.classList.toggle("show", open);
-    document.body.classList.toggle("search-open", open);
-    if (open) {
-      setNav(false);
-      setTimeout(() => searchInput?.focus(), 40);
-    }
-  };
-  document.querySelector("[data-search-open]")?.addEventListener("click", () => setSearch(true));
-  document.querySelectorAll("[data-search-close], [data-search-layer]").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      if (el === searchLayer && e.target !== searchLayer && !e.target.closest("[data-search-close]")) return;
-      setSearch(false);
-    });
-  });
-  const searchIndex = [
-    { title: "Home", url: "index.html", text: "Saith Hanif Rice Mills Jhabran 1979 mill" },
-    { title: "About the mill", url: "about.html", text: "established 1979 Grain Market Jhabran Sheikhupura Punjab" },
-    { title: "Leadership", url: "leadership.html", text: "Saith Hanif Chairman Managing Director CEO" },
-    { title: "Products", url: "products.html", text: "Ziyarat Sultan Wazir rice packs catalogue" },
-    { title: "Ziyarat", url: "ziyarat.html", text: "Ziyarat brand steam sella basmati" },
-    { title: "Sultan", url: "sultan.html", text: "Sultan brand kainat sella short grain" },
-    { title: "Wazir", url: "wazir.html", text: "Wazir brand kainat sella steam 1121" },
-    { title: "Our process", url: "process.html", text: "paddy milling sorting packaging dispatch steam sella" },
-    { title: "Quality", url: "quality.html", text: "specifications moisture broken sorting bag weight" },
-    { title: "Export", url: "export.html", text: "export trade enquiry port private label" },
-    { title: "Contact", url: "contact.html", text: "phone email WhatsApp Jhabran +92 313 3332101" },
-    { title: "Private label", url: "design.html", text: "private label packing artwork" },
-  ];
-  ((window.SHRM && window.SHRM.catalog) || []).forEach((p) => {
-    searchIndex.push({
-      title: `${p.brand} ${p.name}`,
-      url: p.url,
-      text: `${p.blurb || ""} ${p.process || ""} ${p.variety || ""} ${p.packaging || ""}`,
-    });
-  });
-  const runSearch = (q) => {
-    if (!searchOut) return;
-    const term = (q || "").trim().toLowerCase();
-    if (term.length < 2) {
-      searchOut.innerHTML = "";
-      return;
-    }
-    const hits = searchIndex.filter((row) =>
-      `${row.title} ${row.text}`.toLowerCase().includes(term)
-    ).slice(0, 10);
-    if (!hits.length) {
-      searchOut.innerHTML = "<p class=\"search-empty\">No matching pages or packs. Try a brand, variety or Steam / Sella.</p>";
-      return;
-    }
-    searchOut.innerHTML = hits.map((row) =>
-      `<a href="${row.url}"><strong>${row.title}</strong><span>${row.url.replace(".html","").replace("product-","")}</span></a>`
-    ).join("");
-  };
-  searchInput?.addEventListener("input", () => runSearch(searchInput.value));
-  searchForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const first = searchOut?.querySelector("a");
-    if (first) window.location.href = first.getAttribute("href");
-  });
-
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       setNav(false);
-      setSearch(false);
       document.querySelectorAll(".nav-item.has-sub").forEach((item) => setSub(item, false));
     }
   });

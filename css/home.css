@@ -609,101 +609,21 @@ body.home .site-header.scrolled {
   transform: none;
 }
 .home .hero-slides .slide.slide-campaign img {
-  object-fit: contain;
+  object-fit: unset;
   object-position: center center;
 }
 .home .hero-slides .slide.slide-range {
   background: #e4e0d2;
 }
-.home .hero-slides .slide.slide-range img,
-.home .homepage-banner .hero-slides .slide.slide-range img,
-.home .homepage-banner .hero-slides .slide.slide-range picture img {
-  object-fit: contain;
-  object-position: center center;
-}
 .home .hero-slides .slide.slide-gold {
   background: #d9b544;
-}
-.home .hero-slides .slide.slide-gold img,
-.home .homepage-banner .hero-slides .slide.slide-gold img,
-.home .homepage-banner .hero-slides .slide.slide-gold picture img {
-  object-fit: contain;
-  object-position: center center;
 }
 .home .hero-slides .slide.slide-regional {
   background: #e8e2d4;
 }
-.home .hero-slides .slide.slide-regional img,
-.home .homepage-banner .hero-slides .slide.slide-regional img,
-.home .homepage-banner .hero-slides .slide.slide-regional picture img {
-  object-fit: contain;
-  object-position: center center;
-}
-@media (min-width: 721px) {
-  .home .homepage-banner .hero-slides {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-  }
-  .home .homepage-banner .hero-slides .slide,
-  .home .homepage-banner .hero-slides .slide.is-on {
-    position: absolute;
-    inset: 0;
-  }
-  .home .homepage-banner .hero-slides .slide img,
-  .home .homepage-banner .hero-slides .slide picture img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    object-fit: contain;
-    object-position: center center;
-  }
-}
-@media (max-width: 720px) {
-  .home .homepage-banner .hero-slides {
-    height: 100%;
-  }
-  .home .hero-slides .slide,
-  .home .hero-slides .slide.is-on {
-    position: absolute;
-    inset: 0;
-  }
-  .home .hero-slides .slide img,
-  .home .hero-slides .slide picture,
-  .home .hero-slides .slide picture img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center center;
-  }
-  .home .homepage-banner .hero-slides .slide.slide-range img,
-  .home .homepage-banner .hero-slides .slide.slide-range picture img,
-  .home .homepage-banner .hero-slides .slide.slide-gold img,
-  .home .homepage-banner .hero-slides .slide.slide-gold picture img,
-  .home .homepage-banner .hero-slides .slide.slide-regional img,
-  .home .homepage-banner .hero-slides .slide.slide-regional picture img {
-    object-fit: contain;
-    object-position: center center;
-  }
-  .home .hero-slides .slide.slide-heritage img,
-  .home .hero-slides .slide.slide-heritage picture img {
-    object-fit: cover;
-    object-position: center 46%;
-  }
-  .home .slide-campaign .hero-content.hero-center {
-    align-items: center;
-    justify-content: flex-end;
-    padding: 16px 0 28px;
-    background: none;
-  }
-}
 
 .about-page .page-hero {
-  min-height: 520px;
+  min-height: 0;
 }
 .about-page .hero-sub {
   margin: 8px 0 14px;
